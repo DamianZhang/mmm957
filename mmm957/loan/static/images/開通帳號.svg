@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="595.28px" height="841.89px" viewBox="0 0 595.28 841.89" enable-background="new 0 0 595.28 841.89" xml:space="preserve">
+<rect x="69" y="24" fill="#FFFFFF" width="455" height="283"/>
+<g>
+	<rect x="163.8" y="66" fill="#43668B" width="269" height="36"/>
+	<text transform="matrix(1.05 0 0 1 252.6597 92.1992)" fill="#FFFFFF" font-family="'DFHei-W5-WIN-BF'" font-size="20">開通帳號</text>
+	<g>
+		<circle fill="#FFFFFF" stroke="#43668B" stroke-width="2" stroke-miterlimit="10" cx="158.255" cy="196.84" r="45"/>
+		<path opacity="0.2" fill="#43668B" d="M114.532,204.92c2.156,12.336,9.326,22.945,19.343,29.64l24.97-37.437L114.532,204.92z"/>
+		<text transform="matrix(1.05 0 0 1 137.2559 202.8555)" fill="#43668B" font-family="'DFHei-W5-WIN-BF'" font-size="20">月繳</text>
+	</g>
+	<g>
+		<circle fill="#FFFFFF" stroke="#43668B" stroke-width="2" stroke-miterlimit="10" cx="428.79" cy="196.84" r="45"/>
+		<text transform="matrix(1.05 0 0 1 407.79 202.8555)" fill="#43668B" font-family="'DFHei-W5-WIN-BF'" font-size="20">年繳</text>
+		<circle opacity="0.2" fill="#43668B" cx="428.79" cy="196.84" r="45"/>
+	</g>
+	<g>
+		<circle fill="#FFFFFF" stroke="#43668B" stroke-width="2" stroke-miterlimit="10" cx="292.123" cy="196.84" r="45"/>
+		<text transform="matrix(1.05 0 0 1 271.1235 202.855)" fill="#43668B" font-family="'DFHei-W5-WIN-BF'" font-size="20">季繳</text>
+		<path opacity="0.2" fill="#43668B" d="M247.123,196.84L247.123,196.84c0,24.854,20.147,45,45,45
+			c12.425,0,23.675-5.037,31.82-13.18l-31.82-31.82L247.123,196.84z"/>
+	</g>
+	<g>
+		<text transform="matrix(1.05 0 0 1 124.2588 270.0049)" fill="#43668B" font-family="'DFHei-W5-WIN-BF'" font-size="20">30.000</text>
+	</g>
+	<g>
+		<text transform="matrix(1.05 0 0 1 262.2588 270.0049)" fill="#43668B" font-family="'DFHei-W5-WIN-BF'" font-size="20">76.500</text>
+	</g>
+	<text transform="matrix(1.05 0 0 1 390.9258 270.0049)" fill="#43668B" font-family="'DFHei-W5-WIN-BF'" font-size="20">252.000</text>
+</g>
+</svg>

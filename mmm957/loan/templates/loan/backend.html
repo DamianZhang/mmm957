@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>957後台管理系統</title>
+</head>
+<body>
+    {{message}}<br>
+
+    <h1>上傳新廣告圖片</h1><br>
+    <form action="/loan/backend/" method="post" enctype="multipart/form-data"> {% csrf_token %}
+        Phone: <input type="text" name="phone"><br>  <!-- 檢查電話格式及是否存在 -->
+        ad_region: <input type="text" name="ad_region"><br>  <!-- 改成option -->
+        ad_photo_big: <input type="file" name="ad_photo_big"><br>  <!-- 僅限圖檔 -->
+        ad_photo_small: <input type="file" name="ad_photo_small"><br>  <!-- 僅限圖檔 -->
+        <input type="submit" value="提交"><br>
+    </form>
+
+    <br><h1>Ad_contact清單</h1><br>
+    {% for ad_contact in ad_contacts %}
+        name: {{ad_contact.name}} / phone: {{ad_contact.phone}} / line_id: {{ad_contact.line_id}}<br>
+        package: {{ad_contact.package}} / paying_month: {{ad_contact.paying_month}}<br>
+        region: {{ad_contact.region}} / pub_date: {{ad_contact.pub_date}}<br>
+    {% endfor %}
+
+    <br><h1>Lender_payment清單</h1><br>
+    {% for lender_payment in lender_payments %}
+        lender: {{lender_payment.lender.user.user.username}} / receivable_money: {{lender_payment.receivable_money}}<br>
+    {% endfor %}
+</body>
+</html>

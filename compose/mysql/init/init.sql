@@ -1,0 +1,2 @@
+GRANT ALL PRIVILEGES ON mmm957.* TO dbuser@"root" IDENTIFIED BY "ntustdvbntust";
+FLUSH PRIVILEGES;

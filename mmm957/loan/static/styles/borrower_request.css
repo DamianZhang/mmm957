@@ -71,7 +71,7 @@ p a
 	display: inline;
 	position: relative;
 	color: inherit;
-	border-bottom: solid 1px #ffa07f;
+	border-bottom: solid 1px #46bee8;
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
 	-ms-transition: all 200ms ease;
@@ -97,7 +97,8 @@ p a:active
 p a:hover
 {
 	color: #FFFFFF;
-	background: #ffa07f;
+	background: #46bee8;
+	border-radius: 5px;
 }
 p a:hover::after
 {
@@ -1750,6 +1751,19 @@ label
     background: transparent;
 	border: 1px solid rgba(255, 255, 255, 0.2);
 	margin-top: 60px;
+}
+.line_connect
+{
+    color: white;
+    -webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.line_connect:hover
+{
+    color: #46bee8;
 }
 .footer_menu
 {

@@ -145,39 +145,14 @@
 					<div class="billing checkout_section" id="pay_before">
 						<!--<div class="section_title" style="font-size: 30px;" id="scroll"><h2>開通帳號</h2></div>-->
 						<div class="section_subtitle"></div>
-						<div class="checkout_form_container">
+						<div class="checkout_form_container" style="margin-top: 0">
 							<form action="/loan/paying/" id="checkout_form" class="checkout_form" method="POST">{% csrf_token %}
 								<div>
-									<!-- Account
-									<div class="row">
-										<div class="col-lg">
-											<div class="section_title_vip"><h3>購買帳號</h3></div>
-											<div class="account_option2">
-												<div class="section_subtitle">
-													<h4>刊登放款文案<br>可查看借款人聯絡資訊</h4>
-												</div>
-											</div>
-										</div>
-										<div class="col-lg">
-											<div class="section_title_vip"><h3>購買廣告</h3></div>
-											<div class="account_option2">
-												<div class="section_subtitle">
-													<h4>分為全國、地區看板<br>全國看板顯示於首頁上</h4>
-												</div>
-											</div>
-										</div>
-										<div class="col-lg">
-											<div class="section_title_vip"><h3>帳號、廣告同時買</h3></div>
-											<div class="account_option2">
-												<div class="section_subtitle">
-													<h4>同時購買享9折優惠 <br> 升級為ＶＩＰ用戶<br>LINE通知最新借款需求</h4>
-												</div>
-											</div>
-										</div>
-									</div> -->
-									<img src="{% static 'images/廣告.svg' %}" style="width: 100%;"/>
 
-									<div class="checkout_form_container checkout_form">
+									<!-- 方案 -->
+									<img src="{% static 'images/ad.svg' %}" class="ad_svg"/>
+
+									<div class="ad_svg_margin checkout_form" style="width: 100%;">
 										<div>
 											<!-- Proposal -->
 											<label for="checkout_proposal">請選擇購買方案*</label>
@@ -246,70 +221,8 @@
 									<a id="conclusion" href="javascript:concluFunction()">結帳</a>
 								</div>
 
-								<!--
-									<div class="section_title2"><h3>全國性刊登</h3></div>
-									<div class="checkout_form_container">
-										<div class="row">
-											<div class="col-lg-4">
-												<div class="account_option">
-													<div class="section_title"><h3>月繳</h3></div>
-												</div>
-												<div class="account_option2">
-													<div class="section_subtitle"><h4>30,000</h4></div>
-												</div>
-											</div>
-											<div class="col-lg-4">
-												<div class="account_option">
-													<div class="section_title"><h3>季繳</h3></div>
-												</div>
-												<div class="account_option2">
-													<div class="section_subtitle"><h4>76,500</h4></div>
-												</div>
-											</div>
-											<div class="col-lg-4">
-												<div class="account_option">
-													<div class="section_title"><h3>年繳</h3></div>
-												</div>
-												<div class="account_option2">
-													<div class="section_subtitle"><h4>252,000</h4></div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="section_title2"><h3>地區性刊登</h3></div>
-									<div class="section_subtitle"> </div>
-			
-									<div class="checkout_form_container">
-										<div class="row">
-											<div class="col-lg-4">
-												<div class="account_option">
-													<div class="section_title"><h3>月繳</h3></div>
-												</div>
-												<div class="account_option2">
-													<div class="section_subtitle"><h4>12,000</h4></div>
-												</div>
-											</div>
-											<div class="col-lg-4">
-												<div class="account_option">
-													<div class="section_title"><h3>季繳</h3></div>
-												</div>
-												<div class="account_option2">
-													<div class="section_subtitle"><h4>30,600</h4></div>
-												</div>
-											</div>
-											<div class="col-lg-4">
-												<div class="account_option">
-													<div class="section_title"><h3>年繳</h3></div>
-												</div>
-												<div class="account_option2">
-													<div class="section_subtitle"><h4>100,800</h4></div>
-												</div>
-											</div>
-										</div>
-									</div>
-								-->
-								<img src="{% static 'images/開通帳號.svg' %}" style="width: 100%;"/><br>
-								<img src="{% static 'images/地區刊登.svg' %}" style="width: 100%;"/>
+								<img src="{% static 'images/account.svg' %}" class="account_svg" style="width: 100%;"/><br>
+								<img src="{% static 'images/region.svg' %}" class="region_svg" style="width: 100%;"/>
 
 							</form>
 						</div>
@@ -396,6 +309,7 @@
 					<div class="col-md-3">
 						<div class="jumbotron jumbotron-small jumbotron-transparent">
 							<h5 style="color: rgb(255, 255, 255);">957僅提供本借貸平台服務。<br>相關借貸廣告/需求，皆為各會員自行維護，借貸請洽各網頁資料所屬會員。</h5>
+							<a href="https://line.naver.jp/ti/p/~xcod2255" class="line_connect"><img src="{% static 'images/share-b.png' %}" style="width: 20px; height: 20px;" />  加入官方 Line 聯絡我們</a>
 						</div>
 					</div>
 				</div>
@@ -406,14 +320,14 @@
 
 					<div class="col-md-4">
 						<div class="footer_menu ml-lg-auto">
-							<a href="/loan/privacy_policy/"><i class="fa fa-hand-paper-o"></i>隱私權政策</a><br>
-							<a href="/loan/terms/"><i class="fa fa-th-list"></i>使用條款</a>
+							<a href="/loan/privacy_policy/"><i class="fa fa-hand-paper-o"></i> 隱私權政策</a><br>
+							<a href="/loan/terms/"><i class="fa fa-th-list"></i> 使用條款</a>
 						</div>
 					</div>
 
 					<div class="col-md-4">
 						<div class="copyright ml-auto mr-auto"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-							Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <br>This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+							957借貸平台版權所有 &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved <br>This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
 					</div>
 

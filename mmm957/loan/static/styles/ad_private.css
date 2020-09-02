@@ -1528,7 +1528,13 @@ div
 	width: 100%;
 	text-align: center;
 }
-.descontent
+#descontent article
+{
+    font-size: 16px;
+    color: #0b0b0b;
+    padding: 40px;
+}
+#descontent .h3
 {
     position: relative;
     clear: both;
@@ -1537,6 +1543,28 @@ div
     font-size: 21px;
     font-weight: bolder;
     margin: 20px 0 15px;
+}
+#descontent .title {
+    position: relative;
+    z-index: 22;
+    background-color: #FFF;
+    padding: 0 10px;
+}
+#descontent h2 {
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+#descontent .dataList {
+    position: relative;
+    margin: 10px 0;
+    float: left;
+    display: block;
+    color: #333;
+    padding-left: 20px;
+    box-sizing: border-box;
 }
 .product_image img
 {
@@ -1943,6 +1971,19 @@ div
     background: transparent;
 	border: 1px solid rgba(255, 255, 255, 0.2);
 	margin-top: 60px;
+}
+.line_connect
+{
+    color: white;
+    -webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.line_connect:hover
+{
+    color: #46bee8;
 }
 .footer_menu
 {

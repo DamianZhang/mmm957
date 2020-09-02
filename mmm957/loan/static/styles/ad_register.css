@@ -967,7 +967,7 @@ section
 {
 	text-align: center;
 	width: 100%;
-	padding-top: 44px;
+	padding-top: 20px;
 }
 .section_title
 {
@@ -1322,6 +1322,19 @@ section
     background: transparent;
 	border: 1px solid rgba(255, 255, 255, 0.2);
 	margin-top: 60px;
+}
+.line_connect
+{
+    color: white;
+    -webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.line_connect:hover
+{
+    color: #46bee8;
 }
 .footer_menu
 {

@@ -22,3 +22,6 @@ RUN pip install django-redis==4.11.0
 RUN pip install redis==3.5.0
 RUN pip install twilio
 RUN pip install pillow
+RUN apt-get update
+RUN apt-get -y upgrade
+RUN apt-get -y install vim

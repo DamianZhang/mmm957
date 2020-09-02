@@ -14,7 +14,7 @@ services:
       - ./compose/redis/redis.conf:/etc/redis/redis.conf # 挂载redis配置文件
    ports:
       - "6379:6379"
-    restart: always # always表容器运行发生错误时一直重启
+   restart: always # always表容器运行发生错误时一直重启
 
  db:
    image: mysql:5.7
@@ -29,7 +29,7 @@ services:
       - ./compose/mysql/init:/docker-entrypoint-initdb.d/ # 挂载数据初始化sql脚本
    ports:
       - "3306:3306" # 与配置文件保持一致
-    restart: always
+   restart: always
 
  web:
    build: ./mmm957 # 使用myproject目录下的Dockerfile
@@ -47,7 +47,7 @@ services:
       - redis
    environment:
       - DEBUG=False
-    restart: always
+   restart: always
    tty: true
    stdin_open: true
 
@@ -67,4 +67,4 @@ services:
       - web
    depends_on:
       - web
-    restart: always
+   restart: always

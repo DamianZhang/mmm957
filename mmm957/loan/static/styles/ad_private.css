@@ -1197,7 +1197,7 @@ div
 	{
 		.counter-wall .hero-text .label
 		{
-			font-size:.8em;
+			font-size: 1.1em;
 		}
 		.counter-wall .hero-text .counter
 		{
@@ -1530,7 +1530,7 @@ div
 }
 #descontent article
 {
-    font-size: 16px;
+    font-size: 17px;
     color: #0b0b0b;
     padding: 40px;
 }
@@ -1560,11 +1560,21 @@ div
 #descontent .dataList {
     position: relative;
     margin: 10px 0;
-    float: left;
     display: block;
     color: #333;
     padding-left: 20px;
     box-sizing: border-box;
+}
+#descontent .dataList .listTitle {
+    float: left;
+    padding-right: 5px;
+    min-width: 88px;
+}
+#descontent .dataList .listContent {
+    margin-left: 94px;
+}
+#descontent .dataList>li {
+    padding: 4px 0;
 }
 .product_image img
 {

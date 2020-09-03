@@ -1099,14 +1099,13 @@ div
 }
 .counter-wall
 {
-	border-radius:3px;
-	position:relative;
-	height:300px;
-	overflow:hidden;
+	border-radius: 3px;
+    position: relative;
+    height: 300px;
+    overflow: hidden;
 }
 .counter-wall .hero-text
 {
-	font-size:0;
 	font-weight:300;
 	text-shadow:0 1px 3px #333;
 	line-height:300px;
@@ -1114,12 +1113,10 @@ div
 	width:100%;
 	text-align:center;
 	z-index:2;
-	opacity:0;
 	color:#fff
 }
 .counter-wall.loaded .hero-text
 {
-	-webkit-transition:opacity 1s ease-in, font-size 0.5s ease-in;
 	transition:opacity 1s ease-in, font-size 0.5s ease-in;
 	transition-property: opacity, font-size;
 	transition-duration: 1s, 0.8s;
@@ -1132,22 +1129,14 @@ div
 {
 	display:inline-block;
 	vertical-align:middle;
-	box-sizing: border-box;
 }
 .label {
-    display: inline-block;
 	padding: .2em .6em .3em;
-	padding-top: 0.2em;
-    padding-right: 0.6em;
-    padding-bottom: 0.3em;
-    padding-left: 0.6em;
-    font-size: 75%;
     font-weight: 700;
     line-height: 1;
     color: #fff;
     text-align: center;
     white-space: nowrap;
-    vertical-align: baseline;
     border-radius: .25em;
 }
 * {
@@ -1163,18 +1152,20 @@ div
 	}
 	.counter-wall .hero-text .counter
 	{
-		font-size:3.2em
+		font-size:3.2em;
+		width: 20%;
 	}
 }
 @media (min-width: 721px) and (max-width: 1200px)
 {
 	.counter-wall .hero-text .label
 	{
-		font-size:.8em
+		font-size: 1em;
 	}
 	.counter-wall .hero-text .counter
 	{
-		font-size:1.9em
+		font-size: 1.9em;
+		width: 33%;
 	}
 }
 @media (min-width: 481px) and (max-width: 720px)
@@ -1185,29 +1176,44 @@ div
 	}
 	.counter-wall .hero-text .counter
 	{
-		font-size:2.0em
+		font-size:2.0em;
+		width: 30%;
 	}
 }
 @media (min-width: 400px) and (max-width: 480px)
 {
 	.counter-wall .hero-text .label
 	{
-		font-size:.5em;
+		font-size:.8em;
 	}
 	.counter-wall .hero-text .counter
 	{
-		font-size:1.5em
+		font-size:1.5em;
+		width: 27%;
 	}
 }
-@media (max-width: 399px)
+@media (min-width: 360px) and (max-width: 399px)
 {
 	.counter-wall .hero-text .label
 	{
-		font-size:.45em
+		font-size: .7em;
 	}
 	.counter-wall .hero-text .counter
 	{
-		font-size:0.6em
+		font-size: 1.2em;
+		width: 25%;
+	}
+}
+@media (max-width: 359px)
+{
+	.counter-wall .hero-text .label
+	{
+		font-size: .6em;
+	}
+	.counter-wall .hero-text .counter
+	{
+		font-size: 1em;
+		width: 25%;
 	}
 }
 .counter-wall .img-wrapper
@@ -1727,6 +1733,15 @@ div
 .newsletter_text
 {
 	margin-top: 8px;
+	font-size: 14px;
+}
+@media (max-width: 399px)
+{
+    .newsletter_text
+    {
+	    margin-top: 8px;
+	    font-size: 13px;
+    }
 }
 .newsletter_form_container
 {

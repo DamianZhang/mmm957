@@ -969,8 +969,9 @@ section
 	background: #f2f4f8;
 	border: none;
 	outline: none;
-	padding-left:30px;
+	/*padding-left:30px;*/
 	text-align: center;
+	text-align-last: center;
 }
 .dropdown_item_select
 {

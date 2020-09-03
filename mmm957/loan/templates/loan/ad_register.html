@@ -245,17 +245,17 @@
 								<div>
 									<!-- Name -->
 									<label for="checkout_name" >姓名*</label>
-									<input type="text" id="checkout_name" class="checkout_input" placeholder="請提供您的姓名" name="name" required="required">
+									<input type="text" id="checkout_name" class="checkout_input" placeholder="請提供您的姓名" name="name" onfocus="this.placeholder=''" onblur="this.placeholder='請提供您的姓名'" required="required">
 								</div>
 								<div>
 									<!-- Phone -->
 									<label for="checkout_phone" >電話號碼*</label>
-									<input type="tel" id="checkout_phone" class="checkout_input" oninput="value=value.replace(/[^\d]/g,'')" placeholder="請填寫台灣手機號碼" name="phone" required="required">
+									<input type="tel" id="checkout_phone" class="checkout_input" oninput="value=value.replace(/[^\d]/g,'')" placeholder="請填寫台灣手機號碼" name="phone" onfocus="this.placeholder=''" onblur="this.placeholder='請填寫台灣手機號碼'" required="required">
 								</div>
 								<div>
 									<!-- Line -->
 									<label for="checkout_address">LINE ID</label>
-									<input type="text" id="checkout_address" placeholder="請提供您的LINE ID" name="line_id" class="checkout_input">
+									<input type="text" id="checkout_address" placeholder="請提供您的LINE ID" name="line_id" class="checkout_input" onfocus="this.placeholder=''" onblur="this.placeholder='請提供您的LINE ID'">
 								</div>
 								<div>
 									<!-- Proposal -->
@@ -299,7 +299,7 @@
 									<a href="#" onclick="document.getElementById('checkout_form').submit()">送出後會由專員與您聯繫</a>
 								</div>
 								<div class="button forgot_button">
-									<a href="https://line.naver.jp/ti/p/~xcod2255">加入官方LINE聯繫專員</a>
+									<a href="https://line.naver.jp/ti/p/~@738obpvc">加入官方LINE聯繫專員</a>
 								</div>
 							</form>
 						</div>
@@ -353,7 +353,7 @@
 					<div class="col-md-3">
 						<div class="jumbotron jumbotron-small jumbotron-transparent">
 							<h5 style="color: rgb(255, 255, 255);">957僅提供本借貸平台服務。<br>相關借貸廣告/需求，皆為各會員自行維護，借貸請洽各網頁資料所屬會員。</h5>
-							<a href="https://line.naver.jp/ti/p/~xcod2255" class="line_connect"><img src="{% static 'images/share-b.png' %}" style="width: 20px; height: 20px;" />  加入官方 Line 聯絡我們</a>
+							<a href="https://line.naver.jp/ti/p/~@738obpvc" class="line_connect"><img src="{% static 'images/share-b.png' %}" style="width: 20px; height: 20px;" />  加入官方 Line 聯絡我們</a>
 						</div>
 					</div>
 				</div>

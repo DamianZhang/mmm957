@@ -183,11 +183,9 @@
 				<div class="">
 					<div class="counter-wall mv-10" id="homecounter">
 						<span class="hero-text">
-							<div class="row">
-								<div class="col"><span class="label xingothic-tc-w3">目前共有</span></div>
-								<div class="col"><span class="counter" id="counter2">55555</span></div>
-								<div class="col"><span class="label xingothic-tc-w3">位借款用戶</span></div>
-							</div>
+							<span class="label xingothic-tc-w3">目前累計</span>
+							<span class="counter" id="counter2">7834</span>
+							<span class="label xingothic-tc-w3">位借款人</span>
 						</span>
 					</div>
 				</div>
@@ -325,6 +323,7 @@
 									<i class="fa fa-vimeo-square"></i>{{borrowing_message.borrowing_way}}
 								</span>
 								<span class="past-days smallest-text">{{borrowing_message.pub_time}}</span>
+								<!--<span class="past-days smallest-text">3分鐘錢</span>-->
 							</p>
 						</div>
 					</div>
@@ -475,7 +474,7 @@
 					<div class="col-md-3">
 						<div class="jumbotron jumbotron-small jumbotron-transparent">
 							<h5 style="color: rgb(255, 255, 255);">957僅提供本借貸平台服務。<br>相關借貸廣告/需求，皆為各會員自行維護，借貸請洽各網頁資料所屬會員。</h5>
-							<a href="https://line.naver.jp/ti/p/~xcod2255" class="line_connect"><img src="{% static 'images/share-b.png' %}" style="width: 20px; height: 20px;" />  加入官方 Line 聯絡我們</a>
+							<a href="https://line.naver.jp/ti/p/~@738obpvc" class="line_connect"><img src="{% static 'images/share-b.png' %}" style="width: 20px; height: 20px;" />  加入官方 Line 聯絡我們</a>
 						</div>
 					</div>
 				</div>
@@ -558,12 +557,12 @@
 </script>
 <script>
 	var startcalc; 
-	var c = 31000;
+	var c = 5230; //需相差2600
 	var f = 0;
 	function calc(){
 		c+=7; 
         document.getElementById("counter2").innerHTML = c;
-        if(c >= 33651 ){ 
+        if(c >= 7831 ){
             stopcalc(); 
         }
     }

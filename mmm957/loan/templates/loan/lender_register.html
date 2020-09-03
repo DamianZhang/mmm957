@@ -134,32 +134,32 @@
 								<div>
 									<!-- Name -->
 									<label for="checkout_company" style="color: black;">營業名稱*</label>
-									<input type="text" id="checkout_company" class="checkout_input" placeholder="請提供您的營業名稱" name="nickname" required="required">
+									<input type="text" id="checkout_company" class="checkout_input" placeholder="請提供您的營業名稱" name="nickname" onfocus="this.placeholder=''" onblur="this.placeholder='請提供您的營業名稱'" required="required">
 								</div>
 								<div>
 									<!-- Phone -->
 									<label for="checkout_company" style="color: black;">電話號碼*</label>
-									<input type="tel" id="checkout_company" class="checkout_input" oninput="value=value.replace(/[^\d]/g,'')" placeholder="請填寫台灣手機號碼" name="phone" required>
+									<input type="tel" id="checkout_company" class="checkout_input" oninput="value=value.replace(/[^\d]/g,'')" placeholder="請填寫台灣手機號碼" name="phone" onfocus="this.placeholder=''" onblur="this.placeholder='請填寫台灣手機號碼'" required>
 								</div>
 								<div>
 									<!-- Password -->
 									<label for="checkout_address" style="color: black;">密碼*</label>
-									<input type="password" id="checkout_address" class="checkout_input" placeholder="請輸入密碼" name="password1" required="required">
+									<input type="password" id="checkout_address" class="checkout_input" placeholder="請輸入密碼" name="password1" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入密碼'" required="required">
 								</div>
 								<div>
 									<!-- Password -->
 									<label for="checkout_address" style="color: black;">確認密碼*</label>
-									<input type="password" id="checkout_address" class="checkout_input" placeholder="請再一次輸入密碼" name="password2" required="required">
+									<input type="password" id="checkout_address" class="checkout_input" placeholder="請再一次輸入密碼" name="password2" onfocus="this.placeholder=''" onblur="this.placeholder='請再一次輸入密碼'" required="required">
 								</div>
 								<div>
 									<!-- LineID -->
 									<label for="checkout_address" style="color: black;">LINE ID</label>
-									<input type="text" id="checkout_address" class="checkout_input" placeholder="請提供您的LINE ID" name="line_id">
+									<input type="text" id="checkout_address" class="checkout_input" placeholder="請提供您的LINE ID" name="line_id" onfocus="this.placeholder=''" onblur="this.placeholder='請提供您的LINE ID'">
 								</div>
 								<div>
 									<!-- Highest -->
 									<label for="checkout_address" style="color: black;">最高可放貸金額*</label>
-									<input type="tel" id="checkout_address" class="checkout_input" placeholder="請輸入純數字，例如：50000" name="highest_lending" required="required">
+									<input type="tel" id="checkout_address" class="checkout_input" placeholder="請輸入純數字，例如：50000" name="highest_lending" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入純數字，例如：50000'" required="required">
 								</div>
 								<div>
 									<!-- Address -->
@@ -186,12 +186,12 @@
 								<div>
 									<!-- Title -->
 									<label for="checkout_address" style="color: black;">放款文案標題*</label>
-									<input type="text" id="checkout_address" class="checkout_input" placeholder="最多100字" name="lending_title" required="required">
+									<input type="text" id="checkout_address" class="checkout_input" placeholder="最多100字" name="lending_title" onfocus="this.placeholder=''" onblur="this.placeholder='最多100字'" required="required">
 								</div>
 								<div>
 									<!-- Highest -->
 									<label for="checkout_address" style="color: black;">放款文案內容*</label>
-									<textarea id="checkout_address" class="input_textarea" rows="4" cols="50" placeholder="最多300字" name="lending_content"></textarea>
+									<textarea id="checkout_address" class="input_textarea" rows="4" cols="50" placeholder="最多300字" name="lending_content" onfocus="this.placeholder=''" onblur="this.placeholder='最多300字'"></textarea>
 								</div>
 								<div>
 									<!-- Agree -->
@@ -287,7 +287,7 @@
 					<div class="col-md-3">
 						<div class="jumbotron jumbotron-small jumbotron-transparent">
 							<h5 style="color: rgb(255, 255, 255);">957僅提供本借貸平台服務。<br>相關借貸廣告/需求，皆為各會員自行維護，借貸請洽各網頁資料所屬會員。</h5>
-							<a href="https://line.naver.jp/ti/p/~xcod2255" class="line_connect"><img src="{% static 'images/share-b.png' %}" style="width: 20px; height: 20px;" />  加入官方 Line 聯絡我們</a>
+							<a href="https://line.naver.jp/ti/p/~@738obpvc" class="line_connect"><img src="{% static 'images/share-b.png' %}" style="width: 20px; height: 20px;" />  加入官方 Line 聯絡我們</a>
 						</div>
 					</div>
 				</div>

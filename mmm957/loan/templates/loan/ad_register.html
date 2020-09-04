@@ -83,7 +83,7 @@
 
 	<!-- Menu -->
 
-	<div class="menu menu_mm trans_300">
+	<div class="menu menu_mm trans_500">
 		<div class="menu_container menu_mm">
 			<div class="page_menu_content">
 							
@@ -244,22 +244,22 @@
 							<form action="/loan/submit_ad/" id="checkout_form" class="checkout_form" method="POST">{% csrf_token %}
 								<div>
 									<!-- Name -->
-									<label for="checkout_name" >姓名*</label>
-									<input type="text" id="checkout_name" class="checkout_input" placeholder="請提供您的姓名" name="name" onfocus="this.placeholder=''" onblur="this.placeholder='請提供您的姓名'" required="required">
+									<label for="checkout_name" style="color: black;" id="checkout_name_id">姓名*</label>
+									<input type="text" id="checkout_name" class="checkout_input" placeholder="請提供您的姓名" name="name" onfocus="this.placeholder=''" onblur="this.placeholder='請提供您的姓名'" oninput="onInput_checkout_name_id()" onchange="onChange_checkout_name_id(this.value)" required="required">
 								</div>
 								<div>
 									<!-- Phone -->
-									<label for="checkout_phone" >電話號碼*</label>
-									<input type="tel" id="checkout_phone" class="checkout_input" oninput="value=value.replace(/[^\d]/g,'')" placeholder="請填寫台灣手機號碼" name="phone" onfocus="this.placeholder=''" onblur="this.placeholder='請填寫台灣手機號碼'" required="required">
+									<label for="checkout_phone" style="color: black;" id="checkout_phone_id">電話號碼*</label>
+									<input type="tel" id="checkout_phone" class="checkout_input" oninput="value=value.replace(/[^\d]/g,'');onInput_checkout_phone_id()" placeholder="請填寫台灣手機號碼" name="phone" onfocus="this.placeholder=''" onblur="this.placeholder='請填寫台灣手機號碼'" onchange="onChange_checkout_phone_id(this.value)" required="required">
 								</div>
 								<div>
 									<!-- Line -->
-									<label for="checkout_address">LINE ID</label>
+									<label for="checkout_address" style="color: black;">LINE ID</label>
 									<input type="text" id="checkout_address" placeholder="請提供您的LINE ID" name="line_id" class="checkout_input" onfocus="this.placeholder=''" onblur="this.placeholder='請提供您的LINE ID'">
 								</div>
 								<div>
 									<!-- Proposal -->
-									<label for="checkout_proposal">請選擇刊登方案*</label>
+									<label for="checkout_proposal" style="color: black;">請選擇刊登方案</label>
 									<select name="package" id="checkout_proposal" class="dropdown_item_select checkout_input_region" onchange="showDiv('region', 'pay_region', 'pay_country', this)" required="required">
 										<option value="全國性刊登">全國性刊登</option>
 										<option value="地區性刊登">地區性刊登</option>
@@ -267,7 +267,7 @@
 								</div>
 								<div id="region">
 									<!-- Region -->
-									<label for="checkout_region">請選擇刊登地區*</label>
+									<label for="checkout_region" style="color: black;">請選擇刊登地區</label>
 									<select name="region" id="checkout_region" class="dropdown_item_select checkout_input_region" onchange="showDiv2('pay_region','pay_country', this)">
 										<option value="北、北、基（含宜蘭）">北、北、基（含宜蘭）</option>
 										<option value="桃、竹、苗">桃、竹、苗</option>
@@ -279,7 +279,7 @@
 								</div>
 								<div id="pay_region">
 									<!-- Pay_Region -->
-									<label for="paying_month_local">請選擇刊登期限*</label>
+									<label for="paying_month_local" style="color: black;">請選擇刊登期限</label>
 									<select name="paying_month_local" id="paying_month_local" class="dropdown_item_select checkout_input_region">
 										<option value="12000">月繳 12,000</option>
 										<option value="30600">季繳 30,600</option>
@@ -288,7 +288,7 @@
 								</div>
 								<div id="pay_country">
 									<!-- Pay_Country -->
-									<label for="paying_month_nation">請選擇刊登期限*</label>
+									<label for="paying_month_nation" style="color: black;">請選擇刊登期限</label>
 									<select name="paying_month_nation" id="paying_month_nation" class="dropdown_item_select checkout_input_region">
 										<option value="30000">月繳 30,000</option>
 										<option value="76500">季繳 76,500</option>
@@ -412,6 +412,30 @@
 	{
 		document.getElementById(divId).style.display = element.value == 1 ? 'block' : 'none';
 		document.getElementById(divId2).style.display = element.value == 1 ? 'none' : 'block';
+	}
+	function onInput_checkout_name_id() {
+    	document.getElementById('checkout_name_id').innerHTML = '姓名';
+    }
+    function onChange_checkout_name_id(val) {
+    	if (val == '')
+    	{
+    		document.getElementById('checkout_name_id').innerHTML = '姓名*';
+    	}
+    	else{
+    		document.getElementById('checkout_name_id').innerHTML = '姓名';
+    	}
+	}
+    function onInput_checkout_phone_id() {
+    	document.getElementById('checkout_phone_id').innerHTML = '電話號碼';
+    }
+    function onChange_checkout_phone_id(val) {
+    	if (val == '')
+    	{
+    		document.getElementById('checkout_phone_id').innerHTML = '電話號碼*';
+    	}
+    	else{
+    		document.getElementById('checkout_phone_id').innerHTML = '電話號碼';
+    	}
 	}
 </script>
 

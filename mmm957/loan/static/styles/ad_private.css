@@ -737,18 +737,27 @@ section
 	right: -400px;
 	width: 400px;
 	height: 100vh;
-	background: black; /*e4e4e4*/
+	background: black;
 	z-index: 101;
+	opacity: 0;
+    transform: translateX(25%);
 }
 .menu.active
 {
 	right: 0;
+	opacity: 1;
+    -webkit-transform: none;
+    transform: translateX(0%);
+    -webkit-transition: opacity 500ms ease,-webkit-transform 500ms ease;
+    transition: opacity 500ms ease,-webkit-transform 500ms ease;
+    transition: opacity 500ms ease,transform 500ms ease;
+    transition: opacity 500ms ease,transform 500ms ease,-webkit-transform 500ms ease;
 }
 .menu_container
 {
 	width: 100%;
 	height: 0px;
-	padding-top: 130px;
+	padding-top: 100px;
 }
 .menu.active .menu_container
 {
@@ -1208,11 +1217,11 @@ div
 	{
 		.counter-wall .hero-text .label
 		{
-			font-size:.7em
+			font-size: 1em;
 		}
 		.counter-wall .hero-text .counter
 		{
-			font-size:0.9em
+			font-size: 0.9em;
 		}
 	}
 	.counter-wall .img-wrapper
@@ -1530,9 +1539,11 @@ div
 }
 #descontent article
 {
-    font-size: 17px;
+    font-size: 22px;
     color: #0b0b0b;
-    padding: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
 }
 #descontent .h3
 {
@@ -1540,9 +1551,31 @@ div
     clear: both;
     border-left: 7px solid #d0e5f7;
     line-height: 22px;
-    font-size: 21px;
+    font-size: 26px;
     font-weight: bolder;
     margin: 20px 0 15px;
+}
+@media (min-width: 400px) and (max-width: 480px)
+{
+	#descontent article
+    {
+        font-size: 18px;
+    }
+	#descontent .h3
+    {
+        font-size: 22px;
+    }
+}
+@media (max-width: 399px)
+{
+	#descontent article
+    {
+        font-size: 17px;
+    }
+	#descontent .h3
+    {
+        font-size: 21px;
+    }
 }
 #descontent .title {
     position: relative;
@@ -1566,12 +1599,11 @@ div
     box-sizing: border-box;
 }
 #descontent .dataList .listTitle {
-    float: left;
-    padding-right: 5px;
-    min-width: 88px;
+    padding-right: 0px;
+    min-width: 4px;
 }
 #descontent .dataList .listContent {
-    margin-left: 94px;
+    margin-left: 0px;
 }
 #descontent .dataList>li {
     padding: 4px 0;

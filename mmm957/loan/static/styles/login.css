@@ -638,18 +638,27 @@ section
 	right: -400px;
 	width: 400px;
 	height: 100vh;
-	background: black; /*e4e4e4*/
+	background: black;
 	z-index: 101;
+	opacity: 0;
+    transform: translateX(25%);
 }
 .menu.active
 {
 	right: 0;
+	opacity: 1;
+    -webkit-transform: none;
+    transform: translateX(0%);
+    -webkit-transition: opacity 500ms ease,-webkit-transform 500ms ease;
+    transition: opacity 500ms ease,-webkit-transform 500ms ease;
+    transition: opacity 500ms ease,transform 500ms ease;
+    transition: opacity 500ms ease,transform 500ms ease,-webkit-transform 500ms ease;
 }
 .menu_container
 {
 	width: 100%;
 	height: 0px;
-	padding-top: 130px;
+	padding-top: 100px;
 }
 .menu.active .menu_container
 {
@@ -850,11 +859,17 @@ section
 {
 	height: 166px;
 	width: 100%;
+	border-radius: 7px;
 	background: #f2f4f8;
 	border: none;
 	outline: none;
 	padding: 1em;
 	text-align: center;
+}
+.input_textarea:focus {
+    outline: none !important;
+    border:1px solid #719ECE;
+    box-shadow: 0 0 6px #719ECE;
 }
 .breadcrumbs ul li
 {
@@ -956,11 +971,17 @@ section
 {
 	width: 100%;
 	height: 52px;
+	border-radius: 7px;
 	background: #f2f4f8;
 	border: none;
 	outline: none;
 	padding-left: 0px;
 	text-align: center;
+}
+.checkout_input:focus {
+    outline: none !important;
+    border:1px solid #719ECE;
+    box-shadow: 0 0 6px #719ECE;
 }
 .checkout_input_region
 {

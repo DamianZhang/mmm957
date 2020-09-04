@@ -83,7 +83,7 @@
 
 	<!-- Menu -->
 
-	<div class="menu menu_mm trans_300">
+	<div class="menu menu_mm trans_500">
 		<div class="menu_container menu_mm">
 			<div class="page_menu_content">
 
@@ -149,13 +149,13 @@
 							<form action="/loan/resetpassword/" id="checkout_form" class="checkout_form" method="POST">{% csrf_token %}
 								<div>
 									<!-- Password -->
-									<label for="checkout_address">更改密碼*</label>
-									<input type="password" id="checkout_address" class="checkout_input" name="password1" required="required">
+									<label for="checkout_password" id="checkout_password_id">更改密碼*</label>
+									<input type="password" id="checkout_password" class="checkout_input" name="password1" oninput="onInput_checkout_password_id()" onchange="onChange_checkout_password_id(this.value)" required="required">
 								</div>
 								<div>
 									<!-- Password2 -->
-									<label for="checkout_address">確認密碼*</label>
-									<input type="password" id="checkout_address" class="checkout_input" name="password2" required="required">
+									<label for="checkout_password2" id="checkout_password2_id">確認密碼*</label>
+									<input type="password" id="checkout_password2" class="checkout_input" name="password2" oninput="onInput_checkout_password2_id()" onchange="onChange_checkout_password2_id(this.value)" required="required">
 								</div>
 								<div class="button order_button">
 									<a href="#" onclick="document.getElementById('checkout_form').submit()">更改</a>
@@ -290,6 +290,30 @@
 		$(document).ready(function (){
 		$("html,body").animate({scrollTop:670},800);
 	});
+	}
+	function onInput_checkout_password_id() {
+    	document.getElementById('checkout_password_id').innerHTML = '更改密碼';
+    }
+    function onChange_checkout_password_id(val) {
+    	if (val == '')
+    	{
+    		document.getElementById('checkout_password_id').innerHTML = '更改密碼*';
+    	}
+    	else{
+    		document.getElementById('checkout_password_id').innerHTML = '更改密碼';
+    	}
+	}
+	function onInput_checkout_password2_id() {
+    	document.getElementById('checkout_password2_id').innerHTML = '確認密碼';
+    }
+    function onChange_checkout_password2_id(val) {
+    	if (val == '')
+    	{
+    		document.getElementById('checkout_password2_id').innerHTML = '確認密碼*';
+    	}
+    	else{
+    		document.getElementById('checkout_password2_id').innerHTML = '確認密碼';
+    	}
 	}
 </script>
 </body>

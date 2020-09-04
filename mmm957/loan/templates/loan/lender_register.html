@@ -83,7 +83,7 @@
 
 	<!-- Menu -->
 
-	<div class="menu menu_mm trans_300">
+	<div class="menu menu_mm trans_500">
 		<div class="menu_container menu_mm">
 			<div class="page_menu_content">
 
@@ -133,38 +133,38 @@
 							<form action="/loan/register_lender/" id="checkout_form" class="checkout_form" method="POST">{% csrf_token %}
 								<div>
 									<!-- Name -->
-									<label for="checkout_company" style="color: black;">營業名稱*</label>
-									<input type="text" id="checkout_company" class="checkout_input" placeholder="請提供您的營業名稱" name="nickname" onfocus="this.placeholder=''" onblur="this.placeholder='請提供您的營業名稱'" required="required">
+									<label for="checkout_name" style="color: black;" id="checkout_name_id">營業名稱*</label>
+									<input type="text" id="checkout_name" class="checkout_input" placeholder="請提供您的營業名稱" name="nickname" onfocus="this.placeholder=''" onblur="this.placeholder='請提供您的營業名稱'" oninput="onInput_checkout_name_id()" onchange="onChange_checkout_name_id(this.value)" required="required">
 								</div>
 								<div>
 									<!-- Phone -->
-									<label for="checkout_company" style="color: black;">電話號碼*</label>
-									<input type="tel" id="checkout_company" class="checkout_input" oninput="value=value.replace(/[^\d]/g,'')" placeholder="請填寫台灣手機號碼" name="phone" onfocus="this.placeholder=''" onblur="this.placeholder='請填寫台灣手機號碼'" required>
+									<label for="checkout_phone" style="color: black;" id="checkout_phone_id">電話號碼*</label>
+									<input type="tel" id="checkout_phone" class="checkout_input" oninput="value=value.replace(/[^\d]/g,'');onInput_checkout_phone_id()" placeholder="請填寫台灣手機號碼" name="phone" onfocus="this.placeholder=''" onblur="this.placeholder='請填寫台灣手機號碼'" onchange="onChange_checkout_phone_id(this.value)" required>
 								</div>
 								<div>
 									<!-- Password -->
-									<label for="checkout_address" style="color: black;">密碼*</label>
-									<input type="password" id="checkout_address" class="checkout_input" placeholder="請輸入密碼" name="password1" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入密碼'" required="required">
+									<label for="checkout_password" style="color: black;" id="checkout_password_id">密碼*</label>
+									<input type="password" id="checkout_password" class="checkout_input" placeholder="請輸入密碼" name="password1" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入密碼'" oninput="onInput_checkout_password_id()" onchange="onChange_checkout_password_id(this.value)" required="required">
 								</div>
 								<div>
 									<!-- Password -->
-									<label for="checkout_address" style="color: black;">確認密碼*</label>
-									<input type="password" id="checkout_address" class="checkout_input" placeholder="請再一次輸入密碼" name="password2" onfocus="this.placeholder=''" onblur="this.placeholder='請再一次輸入密碼'" required="required">
+									<label for="checkout_password2" style="color: black;" id="checkout_password2_id">確認密碼*</label>
+									<input type="password" id="checkout_password2" class="checkout_input" placeholder="請再一次輸入密碼" name="password2" onfocus="this.placeholder=''" onblur="this.placeholder='請再一次輸入密碼'" oninput="onInput_checkout_password2_id()" onchange="onChange_checkout_password2_id(this.value)" required="required">
 								</div>
 								<div>
 									<!-- LineID -->
-									<label for="checkout_address" style="color: black;">LINE ID</label>
-									<input type="text" id="checkout_address" class="checkout_input" placeholder="請提供您的LINE ID" name="line_id" onfocus="this.placeholder=''" onblur="this.placeholder='請提供您的LINE ID'">
+									<label for="checkout_line" style="color: black;">LINE ID</label>
+									<input type="text" id="checkout_line" class="checkout_input" placeholder="請提供您的LINE ID" name="line_id" onfocus="this.placeholder=''" onblur="this.placeholder='請提供您的LINE ID'">
 								</div>
 								<div>
 									<!-- Highest -->
-									<label for="checkout_address" style="color: black;">最高可放貸金額*</label>
-									<input type="tel" id="checkout_address" class="checkout_input" placeholder="請輸入純數字，例如：50000" name="highest_lending" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入純數字，例如：50000'" required="required">
+									<label for="checkout_highest_lending" style="color: black;" id="checkout_highest_lending_id">最高可放貸金額*</label>
+									<input type="tel" id="checkout_highest_lending" class="checkout_input" oninput="value=value.replace(/[^\d]/g,'');onInput_checkout_highest_lending_id()" placeholder="請輸入純數字，例如：50000" name="highest_lending" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入純數字，例如：50000'" onchange="onChange_checkout_highest_lending_id(this.value)" required="required">
 								</div>
 								<div>
 									<!-- Address -->
-									<label for="checkout_country" style="color: black;">營業總部所在地*</label>
-									<select name="region" id="checkout_country" class="dropdown_item_select checkout_input_region" onchange="showDiv2('pay_region','pay_country', this)">
+									<label for="checkout_region" style="color: black;">營業總部所在地</label>
+									<select name="region" id="checkout_region" class="dropdown_item_select checkout_input_region" onchange="showDiv2('pay_region','pay_country', this)">
 										<option value="北、北、基（含宜蘭）">北、北、基（含宜蘭）</option>
 										<option value="桃、竹、苗">桃、竹、苗</option>
 										<option value="中、彰、投">中、彰、投</option>
@@ -175,7 +175,7 @@
 								</div>
 								<div>
 									<!-- Lender_Way -->
-									<label style="color: black;">主要可接受抵押品*</label><br>
+									<label style="color: black;">主要可接受抵押品</label><br>
 									<select name="lending_way" id="checkout_country" class="dropdown_item_select checkout_input_region" onchange="showDiv2('pay_region','pay_country', this)">
 										<option value="本票">本票</option>
 										<option value="機車">機車</option>
@@ -185,13 +185,13 @@
 								</div>
 								<div>
 									<!-- Title -->
-									<label for="checkout_address" style="color: black;">放款文案標題*</label>
-									<input type="text" id="checkout_address" class="checkout_input" placeholder="最多100字" name="lending_title" onfocus="this.placeholder=''" onblur="this.placeholder='最多100字'" required="required">
+									<label for="checkout_title" style="color: black;" id="checkout_title_id">放款文案標題*</label>
+									<input type="text" id="checkout_title" class="checkout_input" placeholder="最多100字" name="lending_title" onfocus="this.placeholder=''" onblur="this.placeholder='最多100字'" oninput="onInput_checkout_title_id()" onchange="onChange_checkout_title_id(this.value)" required="required">
 								</div>
 								<div>
 									<!-- Highest -->
-									<label for="checkout_address" style="color: black;">放款文案內容*</label>
-									<textarea id="checkout_address" class="input_textarea" rows="4" cols="50" placeholder="最多300字" name="lending_content" onfocus="this.placeholder=''" onblur="this.placeholder='最多300字'"></textarea>
+									<label for="checkout_content" style="color: black;" id="checkout_content_id">放款文案內容*</label>
+									<textarea id="checkout_content" class="input_textarea" rows="4" cols="50" placeholder="最多300字" name="lending_content" onfocus="this.placeholder=''" onblur="this.placeholder='最多300字'" oninput="onInput_checkout_content_id()" onchange="onChange_checkout_content_id(this.value)" required="required"></textarea>
 								</div>
 								<div>
 									<!-- Agree -->
@@ -335,5 +335,91 @@
 <script src="{% static 'plugins/easing/easing.js' %}"></script>
 <script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
 <script src="{% static 'js/checkout.js' %}"></script>
+<script>
+	function onInput_checkout_name_id() {
+    	document.getElementById('checkout_name_id').innerHTML = '營業名稱';
+    }
+    function onChange_checkout_name_id(val) {
+    	if (val == '')
+    	{
+    		document.getElementById('checkout_name_id').innerHTML = '營業名稱*';
+    	}
+    	else{
+    		document.getElementById('checkout_name_id').innerHTML = '營業名稱';
+    	}
+	}
+    function onInput_checkout_phone_id() {
+    	document.getElementById('checkout_phone_id').innerHTML = '電話號碼';
+    }
+    function onChange_checkout_phone_id(val) {
+    	if (val == '')
+    	{
+    		document.getElementById('checkout_phone_id').innerHTML = '電話號碼*';
+    	}
+    	else{
+    		document.getElementById('checkout_phone_id').innerHTML = '電話號碼';
+    	}
+	}
+	function onInput_checkout_password_id() {
+    	document.getElementById('checkout_password_id').innerHTML = '密碼';
+    }
+    function onChange_checkout_password_id(val) {
+    	if (val == '')
+    	{
+    		document.getElementById('checkout_password_id').innerHTML = '密碼*';
+    	}
+    	else{
+    		document.getElementById('checkout_password_id').innerHTML = '密碼';
+    	}
+	}
+	function onInput_checkout_password2_id() {
+    	document.getElementById('checkout_password2_id').innerHTML = '確認密碼';
+    }
+    function onChange_checkout_password2_id(val) {
+    	if (val == '')
+    	{
+    		document.getElementById('checkout_password2_id').innerHTML = '確認密碼*';
+    	}
+    	else{
+    		document.getElementById('checkout_password2_id').innerHTML = '確認密碼';
+    	}
+	}
+	function onInput_checkout_highest_lending_id() {
+    	document.getElementById('checkout_highest_lending_id').innerHTML = '最高可放貸金額';
+    }
+    function onChange_checkout_highest_lending_id(val) {
+    	if (val == '')
+    	{
+    		document.getElementById('checkout_highest_lending_id').innerHTML = '最高可放貸金額*';
+    	}
+    	else{
+    		document.getElementById('checkout_highest_lending_id').innerHTML = '最高可放貸金額';
+    	}
+	}
+	function onInput_checkout_title_id() {
+    	document.getElementById('checkout_title_id').innerHTML = '放款文案標題';
+    }
+    function onChange_checkout_title_id(val) {
+    	if (val == '')
+    	{
+    		document.getElementById('checkout_title_id').innerHTML = '放款文案標題*';
+    	}
+    	else{
+    		document.getElementById('checkout_title_id').innerHTML = '放款文案標題';
+    	}
+	}
+	function onInput_checkout_content_id() {
+    	document.getElementById('checkout_content_id').innerHTML = '放款文案內容';
+    }
+    function onChange_checkout_content_id(val) {
+    	if (val == '')
+    	{
+    		document.getElementById('checkout_content_id').innerHTML = '放款文案內容*';
+    	}
+    	else{
+    		document.getElementById('checkout_content_id').innerHTML = '放款文案內容';
+    	}
+	}
+</script>
 </body>
 </html>

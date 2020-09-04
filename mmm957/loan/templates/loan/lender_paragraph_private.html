@@ -88,7 +88,7 @@
 
 	<!-- Menu -->
 
-	<div class="menu menu_mm trans_300">
+	<div class="menu menu_mm trans_500">
 		<div class="menu_container menu_mm">
 			<div class="page_menu_content">
 
@@ -201,11 +201,11 @@
 		</div>
 	</div>
 
-	<div class="products">
+	<div class="products" style="padding-top: 5px;">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-12">
-					<!-- ad_text -->
+				<!--<div class="col-lg-12">
+
 					<div class="box_detail">
 						<div class="product_title">{{lender.lending_title}}</div>
 						<div class="borrow_detail_border"></div>
@@ -243,27 +243,54 @@
 						</div>
 					</div>
 					<div class="newsletter_title" style="margin-top:40px">放款描述：{{lender.lending_content}}</div>
-				</div>
+				</div> -->
 
-
+				<!-- ad_text -->
 				<div id="descontent">
 					<article>
 						<h2 class="h3"><span class="title">放款資訊</span></h2>
-						<ul class="dataList" style="width:70%;">
+						<ul class="dataList" style="width:100%;">
 							<li>
-								<div class="listTitle"><i class="fa fa-user"></i><span style="letter-spacing: 6px;"> 金主：</span></div>
-								<div class="listContent"><span style="letter-spacing: 6px;">{{lender.nickname}}</span></div>
+								<i class="fa fa-user"></i><span class="listTitle" style="letter-spacing: 2px;"> 金主：</span>
+								<span class="listContent" style="letter-spacing: 6px;">{{lender.nickname}}</span>
 							</li>
 							<li>
-								<div class="listTitle"><i class="fa fa-phone"></i><span style="letter-spacing: 6px;"> 電話：</span></div>
-								<div class="listContent"><span style="letter-spacing: 3px;"><a href="tel:{{lender.user.user.username}}">{{lender.user.user.username}}</a></span></div>
+								<i class="fa fa-phone"></i><span class="listTitle" style="letter-spacing: 2px;"> 電話：</span>
+								<span class="listContent" style="letter-spacing: 1px;"><a href="tel:{{lender.user.user.username}}">{{lender.user.user.username}}</a></span>
+							</li>
+							<li>
+								<img src="{% static 'images/share-b.png' %}" style="width: 16px; height: 16px;" /><span class="listTitle" style="letter-spacing: 1px;"> LINE：</span>
+								<span class="listContent" style="letter-spacing: 1px;"><a href="https://line.me/ti/p/~{{lender.line_id}}">{{lender.line_id}}</a></span>
+							</li>
+							<li>
+								<i class="fa fa-usd"></i><span class="listTitle" style="letter-spacing: 2px;"> 最高可放貸金額：</span>
+								<span class="listContent" style="letter-spacing: 1px;">{{lender.highest_lending}}</span>
+							</li>
+							<li>
+								<i class="fa fa-vimeo-square"></i><span class="listTitle" style="letter-spacing: 2px;"> 可接受抵押品：</span>
+								<span class="listContent" style="letter-spacing: 1px;">{{lender.lending_way}}</span>
+							</li>
+							<li>
+								<i class="fa fa-location-arrow"></i><span class="listTitle" style="letter-spacing: 2px;"> 營業總部所在地：</span>
+								<span class="listContent" style="letter-spacing: 0px;">{{lender.region}}</span>
+							</li>
+							<li>
+								<i class="fa fa-clock-o"></i><span class="listTitle" style="letter-spacing: 2px;"> 最近更新：</span>
+								<span class="listContent" style="letter-spacing: 0px;">{{lender.update_time}}</span>
 							</li>
 						</ul>
 					</article>
-					<article class="boxsize"><div class="container"><h2 class="h3"><span class="title">公司簡介</span></h2><div class="wrap"><div><p class="datainfo boxsize">馬里蘭文教機構現各有兩所幼兒園（馬里蘭幼兒園、奧克蘭幼兒園）及美語補習班（北屯區梅川校、北區賴厝校），是結合統整性主題教學與情境式語言學習的園地。提供多元的藝術人文空間，旨在為幼兒建立一個愉快的環境及提供優良的學習機會，確保幼兒的學前教育期是充滿樂趣及高水準，並將東西方教育理論及實踐中的精華融入於課程中。 如果您欣賞孩子小腦袋裡千奇百怪的點子、肯定人格養成的重要性、理解也喜愛幼兒教育...那麼，馬里蘭誠摯地邀請您加入我們的大家庭，一起為幼兒教育盡心。 本文教機構之幼兒園提供2-6歲幼兒之學前統整性教學，亦安排3-6歲幼兒之課後藝能學習課程。 本文教機構之美語補習班提供國小課後EFL全美班及美語安親課輔班課程。 馬里蘭文教機構分為 馬里蘭幼兒園 奧克蘭幼兒園 馬禮蘭美語補習班北屯梅川校 馬禮蘭美語補習班北區賴厝校</p></div><div class="gradient" style="display: none;"></div></div><div class="read-more"></div></div><div class="clearfix"></div></article>
+
+					<article>
+						<h2 class="h3"><span class="title">放款敘述</span></h2>
+						<ul class="dataList" style="width:100%;">
+							<li>
+								<span class="listContent" style="letter-spacing: 1px;">{{lender.lending_content}}</span>
+							</li>
+						</ul>
+					</article>
+
 				</div>
-
-
 			</div>
 		</div>
 	</div>

@@ -4,6 +4,10 @@ volumes: # 自定义数据卷，位于宿主机/var/lib/docker/volumes内
  myproject_db_vol: # 定义数据卷同步容器内mysql数据
  myproject_redis_vol: # 定义数据卷同步redis容器内数据
  myproject_media_vol: # 定义数据卷同步media文件夹数据
+ certs:
+ vhost:
+ html:
+ dhparam:
 
 services:
  redis:

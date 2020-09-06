@@ -51,13 +51,37 @@ services:
    tty: true
    stdin_open: true
 
- nginx:
-   build: ./compose/nginx
+ nginx-proxy:
+   image: jwilder/nginx-proxy:alpine
+   restart: always
+   container_name: nginx-proxy
    ports:
       - "80:80"
       - "443:443"
-   expose:
-      - "80"
+   volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - html:/usr/share/nginx/html
+      - dhparam:/etc/nginx/dhparam
+      - vhost:/etc/nginx/vhost.d
+      - certs:/etc/nginx/certs:ro
+
+ nginx-proxy-letsencrypt:
+   image: jrcs/letsencrypt-nginx-proxy-companion
+   restart: always
+   depends_on:
+      - "nginx-proxy"
+   volumes:
+      - certs:/etc/nginx/certs
+      - vhost:/etc/nginx/vhost.d
+      - html:/usr/share/nginx/html
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+   environment:
+      - ACME_CA_URI=https://acme-staging-v02.api.letsencrypt.org/directory
+      - NGINX_PROXY_CONTAINER=nginx-proxy
+      - DEFAULT_EMAIL=xcod19980930@gmail.com
+
+ nginx:
+   build: ./compose/nginx
    volumes:
       - ./mmm957/static:/usr/share/nginx/html/static # 挂载静态文件
       - ./compose/nginx/ssl:/usr/share/nginx/ssl # 挂载ssl证书目录
@@ -68,3 +92,9 @@ services:
    depends_on:
       - web
    restart: always
+   environment:
+      - VIRTUAL_HOST=957tw.com
+      - VIRTUAL_NETWORK=nginx-proxy
+      - VIRTUAL_PORT=80
+      - LETSENCRYPT_HOST=957tw.com
+      - LETSENCRYPT_EMAIL=xcod19980930@gmail.com

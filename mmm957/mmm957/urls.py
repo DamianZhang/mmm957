@@ -24,4 +24,5 @@ urlpatterns = [
     path('loan/', include('loan.urls')),
     path('JBBDVB957admin/', admin.site.urls),  # 原本是admin
     path('', RedirectView.as_view(url='/loan/')),
+    path('.well-known/', include('letsencrypt.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

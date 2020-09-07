@@ -100,7 +100,7 @@
 				<ul class="page_menu_nav menu_mm">
 					<li class="page_menu_item menu_mm"><a href="/loan/">首頁<i class="fa fa-angle-down"></i></a></li>
 					{% if user.is_authenticated %}
-						{% if user.myuser.is_borrwer %}
+						{% if user.myuser.is_borrower %}
 							<li class="page_menu_item menu_mm"><a href="/loan/update_borrower/">借款會員專區<i class="fa fa-angle-down"></i></a></li>
 							<li class="page_menu_item menu_mm"><a href="/loan/create_borrower_message/">我要借錢<i class="fa fa-angle-down"></i></a></li>
 							<li class="page_menu_item menu_mm"><a href="/loan/register_lender/">我要放款<i class="fa fa-angle-down"></i></a></li>

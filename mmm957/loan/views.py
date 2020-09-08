@@ -611,7 +611,7 @@ def sendVerification(request, phone):
             client = Client(account_sid, auth_token)
             client.messages.create(
                 body='歡迎來到957借貸平台。您的簡訊驗證碼為 : ' + r + '。',
-                from_='+13524152876',
+                from_='',
                 to=phone_886
             )
             user.checking_times = user.checking_times + 1
@@ -635,7 +635,7 @@ def sendVerification(request, phone):
             client = Client(account_sid, auth_token)
             client.messages.create(
                 body='歡迎來到957借貸平台。您的簡訊驗證碼為 : ' + r + '。',
-                from_='+13524152876',
+                from_='',
                 to=phone_886
             )
             user.checking_times = user.checking_times + 1

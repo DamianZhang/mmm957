@@ -159,29 +159,43 @@
 				<div class="col-lg-4">
 					<!-- ad_private -->
 					<div class="billing checkout_section">
-						<div class="newsletter_title" style="margin-bottom:1rem">{{borrowing_message.borrower.nickname}}</div>
+						<div class="newsletter_title" style="margin-bottom:1rem">
+							{% if borrowing_message.borrowing_status %}
+								借款成功
+							{% else %}
+								{{borrowing_message.borrower.nickname}}
+							{% endif %}
+						</div>
 						<div class="section_subtitle">
 							<span class="span_color_title"><i class="fa fa-phone"></i> 電話：</span>
-							{% if user.is_authenticated %}
-								{% if perms.loan.view_borrowing_message %}
-									<span class="span_color_title" id="B_tel"><a href="tel:{{borrowing_message.borrower.user.user.username}}">{{borrowing_message.borrower.user.user.username}}</a></span>
+							{% if borrowing_message.borrowing_status %}
+								<span class="span_color_title" id="B_tel">借款成功</span>
+							{% else %}
+								{% if user.is_authenticated %}
+									{% if perms.loan.view_borrowing_message %}
+										<span class="span_color_title" id="B_tel"><a href="tel:{{borrowing_message.borrower.user.user.username}}">{{borrowing_message.borrower.user.user.username}}</a></span>
+									{% else %}
+										<span class="span_color_title" id="B_tel"><a href="/loan/register_lender/">權限不足 無法查看</a></span>
+									{% endif %}
 								{% else %}
 									<span class="span_color_title" id="B_tel"><a href="/loan/register_lender/">權限不足 無法查看</a></span>
 								{% endif %}
-							{% else %}
-								<span class="span_color_title" id="B_tel"><a href="/loan/register_lender/">權限不足 無法查看</a></span>
 							{% endif %}
 						</div>
 						<div class="section_subtitle">
 							<span class="span_color_title"><img src="{% static 'images/share-b.png' %}" style="width: 20px; height: 20px;" /> LINE：</span>
-							{% if user.is_authenticated %}
-								{% if perms.loan.view_borrowing_message %}
-									<span class="span_color_title" id="B_line"><a href="https://line.naver.jp/ti/p/~{{borrowing_message.borrower.line_id}}">{{borrowing_message.borrower.line_id}}</a></span>
+							{% if borrowing_message.borrowing_status %}
+								<span class="span_color_title" id="B_line">借款成功</span>
+							{% else %}
+								{% if user.is_authenticated %}
+									{% if perms.loan.view_borrowing_message %}
+										<span class="span_color_title" id="B_line"><a href="https://line.naver.jp/ti/p/~{{borrowing_message.borrower.line_id}}">{{borrowing_message.borrower.line_id}}</a></span>
+									{% else %}
+										<span class="span_color_title" id="B_line"><a href="/loan/register_lender/">權限不足 無法查看</a></span>
+									{% endif %}
 								{% else %}
 									<span class="span_color_title" id="B_line"><a href="/loan/register_lender/">權限不足 無法查看</a></span>
 								{% endif %}
-							{% else %}
-								<span class="span_color_title" id="B_line"><a href="/loan/register_lender/">權限不足 無法查看</a></span>
 							{% endif %}
 						</div>
 						{% if user.is_authenticated %}

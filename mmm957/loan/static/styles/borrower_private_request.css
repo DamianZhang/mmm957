@@ -107,6 +107,10 @@ p a:hover::after
 {
 	opacity: 0.2;
 }
+input, textarea
+{
+    font-size: initial;
+}
 h1{font-size: 48px;}
 h2{font-size: 36px;}
 h3{font-size: 24px;}

@@ -131,7 +131,7 @@
 								<div>
 									<!-- Verify -->
 									<label for="code_check">驗證碼</label>
-									<input type="text" id="code_check" class="checkout_input" required="required" name="checking_code">
+									<input type="tel" id="code_check" class="checkout_input" required="required" oninput="value=value.replace(/[^\d]/g,'')" name="checking_code">
 									<input type="hidden" name="phone" value="{{phone}}">
 								</div>
 								<div class="row">

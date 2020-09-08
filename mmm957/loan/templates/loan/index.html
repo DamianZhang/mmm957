@@ -7,6 +7,7 @@
 <meta name="description" content="957 project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {% load static %}
+{% load filter %}
 <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
 <link rel="icon" href="{% static 'images/logo.ico' %}" type="image/x-icon">
 <link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
@@ -319,7 +320,7 @@
 										<i class="fa fa-user"></i>{{borrowing_message.borrower.nickname}} /
 									{% endif %}
 									<i class="fa fa-location-arrow"></i>{{borrowing_message.region}} /
-									<i class="fa fa-usd"></i>{{borrowing_message.money}} /
+									<i class="fa fa-usd"></i>{{ borrowing_message.money|money_split }} /
 									<i class="fa fa-vimeo-square"></i>{{borrowing_message.borrowing_way}}
 								</span>
 								<span class="past-days smallest-text">{{borrowing_message.pub_time}}</span>

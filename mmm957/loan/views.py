@@ -26,8 +26,8 @@ class IndexView(generic.ListView):
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
         context.update({
-            'borrowing_message_list': Borrowing_Message.objects.filter(borrower__user__user__groups__name='borrower').order_by('-pub_time'),
-            'lender_list': Lender.objects.order_by('-update_time'),  # 依時間排序, 新增最新更改時間欄位, 更改貼文時記得改變update_time, 完成
+            'borrowing_message_list': Borrowing_Message.objects.filter(borrower__user__user__groups__name='borrower').order_by('-pub_time')[:20],
+            'lender_list': Lender.objects.filter(user__user__groups__name='lender').order_by('-update_time')[:5],  # 依時間排序, 新增最新更改時間欄位, 更改貼文時記得改變update_time, 完成
         })
         return context
 
@@ -53,7 +53,7 @@ class RegisterBorrowerView(View):
 
     def post(self, request, *args, **kwargs):
         # register submit後直接加進user, myuser, Borrower or Lender, 驗證過後再更改Group(從unverified移到其他的, 頁面上的decorator要限制存取)
-        pattern = r"[1-9]+[0-9]*"  # 檢測money是否為非0正整數
+        pattern = r"[1-9]\d{4,6}$"  # 檢測money是否為非0正整數
         phone = request.POST['phone']  # 需檢查電話格式, 是否有效(以驗證碼處理), 是否已被註冊, 完成
         password1 = request.POST['password1']
         password2 = request.POST['password2']
@@ -69,7 +69,7 @@ class RegisterBorrowerView(View):
             message = '此電話號碼已被註冊'
         # 若三次驗證都沒過，則需聯絡客服，未連絡客服者，一段時間把資料清掉?
         if not re.match(pattern, money):
-            message = '借款金額須為數字或不得為0'
+            message = '借款金額須為數字並介於1萬~1000萬'
         if password1.strip() == "" or password2.strip() == "" or nickname.strip() == "" or money.strip() == "" or region.strip() == "" or money_usage.strip() == "":
             message = '所有欄位不得為空'
         if not message == '':
@@ -404,14 +404,14 @@ class LendingMessageView(generic.ListView):
     context_object_name = 'lending_message_list'
 
     def get_queryset(self):
-        return Lender.objects.all().order_by('-update_time')
+        return Lender.objects.filter(user__user__groups__name='lender').order_by('-update_time')
 
 class LendingMessageRegionView(generic.ListView):
     template_name = 'loan/lender_supply.html'
     context_object_name = 'lending_message_list'
 
     def get_queryset(self):
-        return Lender.objects.filter(region=self.kwargs.get('region'))
+        return Lender.objects.filter(user__user__groups__name='lender').filter(region=self.kwargs.get('region')).order_by('-update_time')
 
 class LendingMessageDetailView(generic.DetailView):
     model = Lender
@@ -448,7 +448,7 @@ class CreateBorrowerMessageView(PermissionRequiredMixin, View):
         return render(request, self.template_name, {'borrower': request.user.myuser.borrower})
 
     def post(self, request, *args, **kwargs):
-        pattern = r"[1-9]+[0-9]*"  # 檢測money是否為非0正整數
+        pattern = r"^[1-9]\d{4,6}$"  # 檢測money是否為非0正整數
 
         money_usage = request.POST['money_usage']
         money = request.POST['money']
@@ -458,7 +458,7 @@ class CreateBorrowerMessageView(PermissionRequiredMixin, View):
         if money_usage.strip() == "" or region.strip() == "" or borrowing_way.strip() == "":
             return render(request, self.template_name, {'message': '所有資料不得為空'})
         if not re.match(pattern, money):
-            return render(request, self.template_name, {'message': '借款金額須為數字或不得為0'})
+            return render(request, self.template_name, {'message': '借款金額須為數字並介於1萬~1000萬'})
 
         Borrowing_Message.create_borrowing_message(self, money, region, money_usage, request.user.myuser.borrower, borrowing_way)
 
@@ -606,8 +606,8 @@ def sendVerification(request, phone):
         user = User.objects.get(username=phone).myuser
         if user.checking_times < 5:
             user.checking_code = r
-            account_sid = 'ACcbf33f74130b248782062490d1680c83'  # 寄簡訊
-            auth_token = '07f645e2725464f9915b83828ba74024'
+            account_sid = ''  # 寄簡訊
+            auth_token = ''
             client = Client(account_sid, auth_token)
             client.messages.create(
                 body='歡迎來到957借貸平台。您的簡訊驗證碼為 : ' + r + '。',
@@ -630,8 +630,8 @@ def sendVerification(request, phone):
         user = User.objects.get(username=phone).myuser
         if user.checking_times < 5:
             user.checking_code = r
-            account_sid = 'ACcbf33f74130b248782062490d1680c83'  # 寄簡訊
-            auth_token = '07f645e2725464f9915b83828ba74024'
+            account_sid = ''  # 寄簡訊
+            auth_token = ''
             client = Client(account_sid, auth_token)
             client.messages.create(
                 body='歡迎來到957借貸平台。您的簡訊驗證碼為 : ' + r + '。',

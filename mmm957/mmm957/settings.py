@@ -122,7 +122,7 @@ USE_I18N = True
 
 USE_L10N = False  # 原本為True改為False才能更改格式
 DATE_FORMAT = 'Y/m/d'  # 設定時間格式
-DATETIME_FORMAT = 'Y/m/d H:i'  # 設定時間格式
+DATETIME_FORMAT = 'm/d H:i'  # 設定時間格式
 
 USE_TZ = True
 

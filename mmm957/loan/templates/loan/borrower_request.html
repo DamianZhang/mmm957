@@ -4,7 +4,7 @@
 <title>957 借款需求版</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="957 project">
+<meta name="description" content="957借錢平台提供您最安全、快速、簡單的借款流程。">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {% load static %}
 {% load filter %}
@@ -222,13 +222,19 @@
 							</div>
 							<div class="newsletter_border"></div>
 							<p class="salary">
-								<span class="range-and-currency"> 
-									<i class="fa fa-user"></i>{{borrowing_message.borrower.nickname}} /
+								<span class="range-and-currency">
+									{% if borrowing_message.borrowing_status %}
+										<i class="fa fa-user"></i>已結案 /
+									{% endif %}
+									{% if not borrowing_message.borrowing_status %}
+										<i class="fa fa-user"></i>{{borrowing_message.borrower.nickname}} /
+									{% endif %}
 									<i class="fa fa-location-arrow"></i>{{borrowing_message.region}} /
 									<i class="fa fa-usd"></i>{{ borrowing_message.money|money_split }} /
 									<i class="fa fa-vimeo-square"></i>{{borrowing_message.borrowing_way}}
 								</span>
 								<span class="past-days smallest-text">{{borrowing_message.pub_time}}</span>
+								<!--<span class="past-days smallest-text">3分鐘錢</span>-->
 							</p>
 						</div>
 					</div>
@@ -304,8 +310,8 @@
 
 					<div class="col-md-3">
 						<div class="jumbotron jumbotron-small jumbotron-transparent">
-							<h5 style="color: rgb(255, 255, 255);">957僅提供本借貸平台服務。<br>相關借貸廣告/需求，皆為各會員自行維護，借貸請洽各網頁資料所屬會員。</h5>
-							<a href="https://line.naver.jp/ti/p/~@738obpvc" class="line_connect"><img src="{% static 'images/share-b.png' %}" style="width: 20px; height: 20px;" />  加入官方 Line 聯絡我們</a>
+							<h5 style="color: rgb(255, 255, 255);">957僅提供本借錢平台服務。<br>相關借貸廣告/需求，皆為各會員自行維護，借貸請洽各網頁資料所屬會員。</h5>
+							<a href="https://line.naver.jp/ti/p/~@738obpvc" class="line_connect"><img src="{% static 'images/share-b.png' %}" style="width: 20px; height: 20px;" />  加入官方 LINE 聯絡我們</a>
 						</div>
 					</div>
 				</div>
@@ -323,7 +329,7 @@
 
 					<div class="col-md-4">
 						<div class="copyright ml-auto mr-auto"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-							957借貸平台版權所有 &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved <br>This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+							957借錢平台版權所有 &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved <br>This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
 					</div>
 

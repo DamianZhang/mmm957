@@ -1088,15 +1088,18 @@ section
 	height: 52px;
 	border-radius: 7px;
 	background: #f2f4f8;
-	border: none;
+	border: 1px solid #f2f4f8;
 	outline: none;
 	padding-left: 0px;
 	text-align: center;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 .checkout_input:focus {
     outline: none !important;
     border:1px solid #719ECE;
-    box-shadow: 0 0 2px #719ECE;
+    box-shadow: 0 1px #fff, inset 0 1px 4px rgba(0,0,0,.15);
 }
 .input_textarea
 {
@@ -1104,22 +1107,26 @@ section
 	width: 100%;
 	border-radius: 7px;
 	background: #f2f4f8;
-	border: none;
+	border: 1px solid #f2f4f8;
 	outline: none;
 	padding: 1em;
 	text-align: center;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 .input_textarea:focus {
     outline: none !important;
     border:1px solid #719ECE;
-    box-shadow: 0 0 2px #719ECE;
+    box-shadow: 0 1px #fff, inset 0 1px 4px rgba(0,0,0,.15);
 }
 .checkout_input_region
 {
 	width: 100%;
 	height: 52px;
 	background: #f2f4f8;
-	border: none;
+	border: 1px solid #f2f4f8;
+	border-radius: 7px;
 	outline: none;
 	/*padding-left:30px;*/
 	text-align: center;

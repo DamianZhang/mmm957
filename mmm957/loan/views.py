@@ -169,7 +169,7 @@ class VerifyView(LoginRequiredMixin, View):
 
                     context = {}
                     context['message'] = "驗證碼輸入錯誤，請重新輸入或重新發送驗證碼"
-                    return render(request, self.template_name, {context})
+                    return render(request, self.template_name, context)
             else:
                 context = {}
                 context['message'] = "您已輸入錯誤三次，請重新發送驗證碼或聯絡客服"

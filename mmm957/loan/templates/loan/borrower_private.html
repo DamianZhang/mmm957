@@ -142,7 +142,7 @@
 
 				<div class="col-lg-8">
 					<div class="billing checkout_section">
-						<div class="section_title">客戶資料</div>
+						<div class="section_title" style="font-size:30px;">客戶資料</div>
 						<div class="section_subtitle" style="color:red">{{message}}</div>
 						<div class="checkout_form_container">
 							<form action="/loan/update_borrower/" id="checkout_form" class="checkout_form" method="POST">{% csrf_token %}
@@ -153,13 +153,13 @@
 								</div>
 								<div>
 									<!-- Phone -->
-									<label for="checkout_address">手機號碼</label>
-									<input type="text" id="checkout_address" class="checkout_input" placeholder="{{user.username}}" disabled="disabled">
+									<label for="checkout_phone">手機號碼</label>
+									<input type="text" id="checkout_phone" class="checkout_input" placeholder="{{user.username}}" disabled="disabled">
 								</div>
 								<div>
 									<!-- LineID -->
-									<label for="checkout_address">LINE ID</label>
-									<input type="text" id="checkout_address" class="checkout_input" value="{{borrower.line_id}}" name="line_id" required="required">
+									<label for="checkout_line">LINE ID</label>
+									<input type="text" id="checkout_line" class="checkout_input" value="{{borrower.line_id}}" name="line_id" required="required">
 								</div>
 								<div>
 									<!-- Work -->
@@ -305,6 +305,7 @@
 }
 </script>
 <script>
+	$("#checkout_country").val("{{borrower.job}}");
 	var mobile_flag = isMobile();
 	if(mobile_flag){
 		$(document).ready(function (){

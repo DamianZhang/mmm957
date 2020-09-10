@@ -213,7 +213,8 @@
 											<!-- Pay_Total -->
 											<label>總額：</label>
 											<label id="pay_total">20000</label>
-											<input type='hidden' name="receivable_money" value="20000"/>
+											<input id="pay_total3" type='hidden' name="receivable_money" value="20000"/>
+
 										</div>
 									</div>
 								</div>
@@ -375,6 +376,7 @@
 			else
 				pay_all = reg1+12000;
 			document.getElementById("pay_total").innerHTML = pay_all;
+			$("#pay_total3").val(pay_all);
 		}
 		else{
 			document.getElementById(divId).style.display = 'none';
@@ -388,6 +390,7 @@
 			else
 				pay_all = reg1+30000;
 			document.getElementById("pay_total").innerHTML = pay_all;
+			$("#pay_total3").val(pay_all);
 		}
 	}
 	function show_account_total(element)
@@ -429,6 +432,7 @@
 			pay_all += reg1;
 		}
 		document.getElementById("pay_total").innerHTML = pay_all;
+		$("#pay_total3").val(pay_all);
 	}
 	function show_region_total(element)
 	{
@@ -457,6 +461,7 @@
 			pay_all = 100800 + reg1;;
 		}
 		document.getElementById("pay_total").innerHTML = pay_all;
+		$("#pay_total3").val(pay_all);
 	}
 	function show_country_total(element)
 	{
@@ -485,6 +490,7 @@
 			pay_all = 252000 + reg1;
 		}
 		document.getElementById("pay_total").innerHTML = pay_all;
+		$("#pay_total3").val(pay_all);
 	}
 	function showDiv3(divId, divId2, element)
 	{
@@ -504,6 +510,7 @@
 			reg = 0;
 			pay_all = 30000;
 			document.getElementById("pay_total").innerHTML = pay_all;
+			$("#pay_total3").val(pay_all);
 		}
 		else if (element.value=='帳號、廣告同時買')
 		{
@@ -524,6 +531,7 @@
 			reg = 20000;
 			pay_all = 50000;
 			document.getElementById("pay_total").innerHTML = pay_all;
+			$("#pay_total3").val(pay_all);
 		}
 		else{
 			document.getElementById(divId).style.display = 'none';
@@ -537,6 +545,7 @@
 			reg = 0 ;
 			pay_all = 20000;
 			document.getElementById("pay_total").innerHTML = pay_all;
+			$("#pay_total3").val(pay_all);
 		}
 		
 	}

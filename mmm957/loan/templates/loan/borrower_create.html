@@ -143,7 +143,7 @@
 
 				<div class="col-lg-8">
 					<div class="billing checkout_section">
-						<div class="section_title">新增借款貼文</div>
+						<div class="section_title" style="font-size:30px;">新增借款貼文</div>
 						<div class="section_subtitle" style="color:red">{{message}}</div>
 						<div class="checkout_form_container">
 							<form action="/loan/create_borrower_message/" id="checkout_form" class="checkout_form" method="POST">{% csrf_token %}
@@ -318,6 +318,8 @@
 }
 </script>
 <script>
+	$("#checkout_country").val("{{borrower.region}}");
+	$("#checkout_product").val("{{borrower.borrowing_way}}");
 	var mobile_flag = isMobile();
 	if(mobile_flag){
 		$(document).ready(function (){

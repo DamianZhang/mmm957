@@ -144,7 +144,7 @@
 
 				<div class="col-lg-8">
 					<div class="billing checkout_section">
-						<div class="section_title">修改放款貼文</div>
+						<div class="section_title" style="font-size:30px;">修改放款貼文</div>
 						<div class="section_subtitle" style="color:red">{{message}}</div>
 						<div class="checkout_form_container">
 							<form action="/loan/create_lender_message/" id="checkout_form" class="checkout_form" method="POST">{% csrf_token %}
@@ -184,7 +184,7 @@
 								<div>
 									<!-- Text -->
 									<label for="checkout_content" id="checkout_content_id">放款文案內容*</label>
-									<textarea id="checkout_content" class="input_textarea" name="lending_content" rows="4" cols="50" placeholder="最多300字" onfocus="this.placeholder=''" onblur="this.placeholder='最多300字'" oninput="onInput_checkout_content_id()" onchange="onChange_checkout_content_id(this.value)" value="{{lender.lending_content}}"></textarea>
+									<textarea id="checkout_content" class="input_textarea" name="lending_content" rows="4" cols="50" placeholder="最多300字" onfocus="this.placeholder=''" onblur="this.placeholder='最多300字'" oninput="onInput_checkout_content_id()" onchange="onChange_checkout_content_id(this.value)">{{lender.lending_content}}</textarea>
 								</div>
 								<div class="button order_button">
 									<a href="#" onclick="document.getElementById('checkout_form').submit()">儲存</a>
@@ -314,6 +314,8 @@
 }
 </script>
 <script>
+	$("#checkout_country").val("{{lender.region}}");
+	$("#checkout_product").val("{{lender.lending_way}}");
 	var mobile_flag = isMobile();
 	if(mobile_flag){
 		$(document).ready(function (){

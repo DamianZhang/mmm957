@@ -1092,7 +1092,7 @@ section
 	outline: none;
 	padding-left: 0px;
 	text-align: center;
-	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px #f2f4f8;
     -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
@@ -1111,7 +1111,7 @@ section
 	outline: none;
 	padding: 1em;
 	text-align: center;
-	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px #f2f4f8;
     -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }

@@ -1425,6 +1425,11 @@ div
 
 /* Ad Large */
 
+.index_ad_style
+{
+    width: 318px;
+    height: 100%;
+}
 .avds_large
 {
 	width: calc((100% * 0.608) - 15px);
@@ -1463,7 +1468,8 @@ div
 }
 
 /*********************************
-7. Products
+7.
+s
 *********************************/
 
 .borrow_detail_border

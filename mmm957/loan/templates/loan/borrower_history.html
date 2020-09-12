@@ -168,9 +168,9 @@
 												<td>{{borrowing_message.borrowing_way}}</td>
 												<td>{{borrowing_message.pub_time}}</td>
 												{% if borrowing_message.borrowing_status %}
-													<td id="change1"><button class="button_left"><nobr style="color:white;">已結案</nobr><br></button></td>
+													<td id="change1"><span><nobr style="color:red;">已結案</nobr><br></span></td>
 												{% else %}
-													<td id="change2"><a href="/loan/borrowing_completed/{{borrowing_message.pk}}/">未結案</a></td>
+													<td id="change2"><a class="button_left" href="/loan/borrowing_completed/{{borrowing_message.pk}}/" onClick="javascript:return confirmChoice()";>未結案</a></td>
 <!--													<td id="change2"><button class="button_left" onClick="/loan/borrowing_completed/{{borrowing_message.pk}}/"><nobr style="color:white;">未結案</nobr><br></button></td>-->
 												{% endif %}
 											</tr>
@@ -281,17 +281,18 @@
 <script src="{% static 'js/checkout.js' %}"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-<!--
+
 <script>
-	function confirmChoice(Id)
-	{　 
-		if ( confirm ("尚未結案？") )
-	　　 {　
-    		document.getElementById(Id).innerHTML='<td id="change2"><button class="button_left" onClick="/loan/borrowing_completed/{{borrowing_message.id}}"><nobr style="color:white;">未結案</nobr><br></button></td>';
+	function confirmChoice()
+	{　
+		if ( confirm ("確定要結案？")==true)
+	　　 {
+			return true;
+		}else{
+			return false;
 		}
 	}
 </script>
--->
 <script>
 	function isMobile() {
     var userAgentInfo = navigator.userAgent;

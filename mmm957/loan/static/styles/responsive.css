@@ -351,7 +351,7 @@
 	}
 	.product
 	{
-		width: 100%;
+		width: 45%;
 	}
 	.avds_large_content
 	{
@@ -420,5 +420,8 @@
 
 @media only screen and (max-width: 400px)
 {
-	
+	.product
+    {
+        width: 44.5%;
+    }
 }

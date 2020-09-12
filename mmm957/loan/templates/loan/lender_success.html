@@ -143,16 +143,16 @@
 
 				<div class="col-lg-8">
 					<div class="billing checkout_section" id="pay_after" style="display: block">
-						<img src="{% static 'images/payment_process.svg' %}" style="width: 100%;"/>
+						<img src="{% static 'images/payment_process.svg' %}" style="width: 100%; margin-top: -50px;"/>
 						<div class="section_title"></div>
 						<div class="section_subtitle"></div>
 						<div class="checkout_form_container">
 							<form action="#" id="checkout_after" class="checkout_form">
-								<div>
+								<div class="ad_success_margin">
 									<div class="row">
 										<div class="col-lg account_title">
-											<h1><span>總額：</span>
-											<span id="pay_total2">{{paying.receivable_money}}</span></h1>
+											<span class="pay_total_font">總額：</span>
+											<span id="pay_total2" class="pay_total_font">{{paying.receivable_money}}</span>
 										</div>
 									</div>
 									<div class="row">

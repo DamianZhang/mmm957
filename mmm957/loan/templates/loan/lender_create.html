@@ -358,6 +358,16 @@
     		document.getElementById('checkout_content_id').innerHTML = '放款文案內容';
     	}
 	}
+
+	var u = navigator.userAgent;
+	var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+	if(isiOS==true)
+	{
+		var foo = document.getElementById('checkout_country');
+		foo.style.cssText = 'padding-left:30px; text-align-last: left;';
+		var foo = document.getElementById('checkout_product');
+		foo.style.cssText = 'padding-left:30px; text-align-last: left;';
+	}
 </script>
 </body>
 </html>

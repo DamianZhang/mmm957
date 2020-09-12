@@ -894,6 +894,10 @@ section
 6. Checkout
 *********************************/
 
+.pay_total_font
+{
+    font-size: 48px;
+}
 .ad_svg
 {
     width: 105%;
@@ -904,11 +908,41 @@ section
 }
 .account_svg
 {
-
+    margin-top: 0px;
 }
 .region_svg
 {
     margin-top: -700px;
+}
+.ad_success_margin
+{
+    margin-top: -440px;
+}
+@media (min-width: 721px) and (max-width: 1200px)
+{
+	.ad_svg_margin
+	{
+		margin-top: -230px;
+	}
+	.region_svg
+    {
+        margin-top: -570px;
+    }
+}
+@media (min-width: 481px) and (max-width: 720px)
+{
+	.ad_svg_margin
+	{
+		margin-top: -130px;
+	}
+	.region_svg
+    {
+        margin-top: -300px;
+    }
+    .ad_success_margin
+    {
+        margin-top: -300px;
+    }
 }
 @media (min-width: 400px) and (max-width: 480px)
 {
@@ -920,16 +954,32 @@ section
     {
         margin-top: -350px;
     }
+    .ad_success_margin
+    {
+        margin-top: -260px;
+    }
+    .pay_total_font
+    {
+        font-size: 38px;
+    }
 }
 @media (max-width: 399px)
 {
 	.ad_svg_margin
 	{
-		margin-top: -130px;
+		margin-top: -100px;
 	}
 	.region_svg
     {
-        margin-top: -350px;
+        margin-top: -300px;
+    }
+    .ad_success_margin
+    {
+        margin-top: -240px;
+    }
+    .pay_total_font
+    {
+        font-size: 36px;
     }
 }
 .checkout
@@ -1764,25 +1814,30 @@ div.material-table .hiddensearch input {
 
 .button_left
 {
-	display: inline-block;
-	position: relative;
-	border-radius: 10em;
-	background-color: rgb(0, 0, 0);
-	text-decoration: none;
-	padding: .1em;
-	margin: .1em;
-	font-size: 5px;
-	font-weight: bold;
-	transition: all .5s;
-	-webkit-box-shadow: 0 0 5px #888888;
-	-moz-box-shadow: 0 0 5px #888888;
-	box-shadow: 0 0 5px #888888;
+	cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 17px;
+    line-height: 1.17648;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    min-width: 28px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 18px;
+    background: #46bee8;
+    color: white;
+    -webkit-transition: color ease-in-out .23s,transform ease-in-out .15s;
+    transition: color ease-in-out .23s,transform ease-in-out .15s;
 }
 .button_left:hover 
 {
-	text-shadow: 0px 0px 0px rgba(255, 255, 255, .75);
-	box-shadow: 0px 0px #888888;
-	transform:translateY(-2px)
+    color: white;
+	transform:translateY(-2px);
 }
 #region
 {

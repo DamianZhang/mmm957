@@ -318,8 +318,6 @@
 }
 </script>
 <script>
-	$("#checkout_country").val("{{borrower.region}}");
-	$("#checkout_product").val("{{borrower.borrowing_way}}");
 	var mobile_flag = isMobile();
 	if(mobile_flag){
 		$(document).ready(function (){
@@ -349,6 +347,16 @@
     	else{
     		document.getElementById('checkout_usage_id').innerHTML = '簡易說明借款用途';
     	}
+	}
+
+	var u = navigator.userAgent;
+	var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+	if(isiOS==true)
+	{
+		var foo = document.getElementById('checkout_country');
+		foo.style.cssText = 'padding-left:30px; text-align-last: left;';
+		var foo = document.getElementById('checkout_product');
+		foo.style.cssText = 'padding-left:30px; text-align-last: left;';
 	}
 </script>
 </body>

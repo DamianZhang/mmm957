@@ -437,7 +437,20 @@
     		document.getElementById('checkout_phone_id').innerHTML = '電話號碼';
     	}
 	}
-</script>
 
+	var u = navigator.userAgent;
+	var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+	if(isiOS==true)
+	{
+		var foo = document.getElementById('checkout_proposal');
+		foo.style.cssText = 'padding-left:30px; text-align-last: left;';
+		var foo = document.getElementById('checkout_region');
+		foo.style.cssText = 'padding-left:30px; text-align-last: left;';
+		var foo = document.getElementById('paying_month_local');
+		foo.style.cssText = 'padding-left:30px; text-align-last: left;';
+		var foo = document.getElementById('paying_month_nation');
+		foo.style.cssText = 'padding-left:30px; text-align-last: left;';
+	}
+</script>
 </body>
 </html>

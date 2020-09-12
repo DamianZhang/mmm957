@@ -1189,23 +1189,24 @@ div
 {
 	.counter-wall .hero-text .label
 	{
-		font-size:.8em
+		font-size: 1.3em;
 	}
 	.counter-wall .hero-text .counter
 	{
-		font-size:2.1em}
+		font-size: 2.1em;
 	}
-	@media (min-width: 481px) and (max-width: 720px)
+}
+@media (min-width: 481px) and (max-width: 720px)
+{
+	.counter-wall .hero-text .label
 	{
-		.counter-wall .hero-text .label
-		{
-			font-size:.6em
-		}
-		.counter-wall .hero-text .counter
-		{
-			font-size:2.0em
-		}
+		font-size:.6em
 	}
+	.counter-wall .hero-text .counter
+	{
+		font-size:2.0em
+	}
+}
 	@media (min-width: 400px) and (max-width: 480px)
 	{
 		.counter-wall .hero-text .label

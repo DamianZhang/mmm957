@@ -1169,12 +1169,13 @@ div
 {
 	.counter-wall .hero-text .label
 	{
-		font-size:.8em
+		font-size: 1.3em;
 	}
 	.counter-wall .hero-text .counter
 	{
-		font-size:2.1em}
+		font-size: 2.1em
 	}
+}
 	@media (min-width: 481px) and (max-width: 720px)
 	{
 		.counter-wall .hero-text .label

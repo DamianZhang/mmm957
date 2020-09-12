@@ -330,72 +330,6 @@
 <script src="{% static 'plugins/easing/easing.js' %}"></script>
 <script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
 <script src="{% static 'js/checkout.js' %}"></script>
-<!--
-<script>
-	var code;
-	function createCode() {
-	  code = "";
-	  var codeLength = 6; //驗證碼的長度
-	  var checkCode = document.getElementById("checkCode");
-	  var codeChars = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
-		   'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
-		   'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
-	  for (var index = 0; index < codeLength; index++) {
-		var charNum = Math.floor(Math.random() * 52);
-		code += codeChars[charNum];
-	  }
-	  if (checkCode) {
-		checkCode.className = "code";
-		checkCode.innerHTML = code;
-	  }
-	}
-	function validateCode() {
-	  var inputCode = document.getElementById("code_check").value;
-	  var textShow = document.getElementById("text_show")
-	  if (inputCode.length <= 0) {
-		textShow.innerHTML = "請輸入驗證碼";
-		textShow.style.color = "red";
-	  } else if (inputCode.toUpperCase() != code.toUpperCase()) {
-		textShow.innerHTML = "您輸入的驗證碼有誤";
-		textShow.style.color = "red";
-	  } else {
-		textShow.innerHTML = "驗證碼正確";
-		textShow.style.color = "green";
-		//window.location.href = 'index.html';
-	  }
-	}
-	function checkCode(){
-		var btn = document.getElementById("Button1");
-		btn.onclick=function(){
-		validateCode();
-	  }
-	}
-	window.onload = function () {
-	  	checkCode();
-	  	document.getElementById("createcode").onclick = function () 
-	  	{ 
-			createCode(); 
-			var c = document.getElementById("waiting_button");
-			time(c); 
-		}
-	}
-	var waitTime = 60;
-	function time(ele) {
-        if (waitTime == 0) {
-            ele.disabled=false;
-            document.getElementById('wait_before').style.display = 'block';
-			document.getElementById('wait_after').style.display = 'none';
-            waitTime = 60;
-        } else {
-            ele.disabled=true;
-            ele.innerHTML = waitTime + "秒後可以重新發送";
-            waitTime--;
-            setTimeout(function() {
-                time(ele)
-            }, 1000)
-        }
-	}
-</script>-->
 <script>
 	function onInput_checkout_name_id() {
     	document.getElementById('checkout_name_id').innerHTML = '暱稱';
@@ -468,6 +402,14 @@
     	else{
     		document.getElementById('checkout_usage_id').innerHTML = '簡易說明借款用途';
     	}
+	}
+
+	var u = navigator.userAgent;
+	var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+	if(isiOS==true)
+	{
+		var foo = document.getElementById('checkout_country');
+		foo.style.cssText = 'padding-left:30px; text-align-last: left;';
 	}
 </script>
 </body>

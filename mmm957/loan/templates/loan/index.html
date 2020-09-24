@@ -138,6 +138,37 @@
 
 	</div>
 
+	<!-- Menu
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+		<div class="container">
+		  <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+		  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			<i class="fas fa-bars"></i>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+			  <li class="nav-link"><a href="/loan/">首頁<i class="fa fa-angle-down"></i></a></li>
+					{% if user.is_authenticated %}
+						{% if user.myuser.is_borrower %}
+							<li class="nav-link"><a href="/loan/update_borrower/">借款會員專區<i class="fa fa-angle-down"></i></a></li>
+							<li class="nav-link"><a href="/loan/create_borrower_message/">我要借錢<i class="fa fa-angle-down"></i></a></li>
+							<li class="nav-link"><a href="/loan/register_lender/">我要放款<i class="fa fa-angle-down"></i></a></li>
+						{% else %}
+							<li class="nav-link"><a href="/loan/update_lender/">金主會員專區<i class="fa fa-angle-down"></i></a></li>
+							<li class="nav-link"><a href="/loan/register_borrower/">我要借錢<i class="fa fa-angle-down"></i></a></li>
+							<li class="nav-link"><a href="/loan/borrowing_message/">我要放款<i class="fa fa-angle-down"></i></a></li>
+						{% endif %}
+					{% else %}
+						<li class="nav-link"><a href="/loan/register_borrower/">我要借錢<i class="fa fa-angle-down"></i></a></li>
+						<li class="nav-link"><a href="/loan/register_lender/">我要放款<i class="fa fa-angle-down"></i></a></li>
+					{% endif %}
+					<li class="nav-link"><a href="/loan/submit_ad/">投放廣告<i class="fa fa-angle-down"></i></a></li>
+					<li class="nav-link"><a href="/loan/borrowing_message/">借款需求版<i class="fa fa-angle-down"></i></a></li>
+			</ul>
+		  </div>
+		</div>
+  	</nav>-->
+
 	<!-- Home -->
 	<div class="hometop">
 		<div class="indexhome" style="background-image:url({% static 'images/position_home10.jpeg' %});">

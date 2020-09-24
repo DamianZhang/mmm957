@@ -111,7 +111,7 @@ p::selection
 {
 	
 }*/
-input, textarea
+input, textarea, select
 {
     font-size: initial;
 }
@@ -869,13 +869,13 @@ section
 	outline: none;
 	padding: 1em;
 	text-align: center;
-	box-shadow: inset 0 1px 1px #f2f4f8;
-    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	box-shadow: inset 0 0px 0px #f2f4f8;
+    -webkit-transition: border-color ease-in-out .3s,box-shadow ease-in-out .3s;
+    transition: border-color ease-in-out .3s,box-shadow ease-in-out .3s;
 }
 .input_textarea:focus {
     outline: none !important;
-    border:1px solid #719ECE;
+    border:2px solid #719ECE;
     box-shadow: 0 1px #fff, inset 0 1px 4px rgba(0,0,0,.15);
 }
 .breadcrumbs ul li
@@ -984,13 +984,13 @@ section
 	outline: none;
 	padding-left: 0px;
 	text-align: center;
-	box-shadow: inset 0 1px 1px #f2f4f8;
-    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	box-shadow: inset 0 0px 0px #f2f4f8;
+    -webkit-transition: border-color ease-in-out .3s,box-shadow ease-in-out .3s;
+    transition: border-color ease-in-out .3s,box-shadow ease-in-out .3s;
 }
 .checkout_input:focus {
     outline: none !important;
-    border:1px solid #719ECE;
+    border:2px solid #719ECE;
     box-shadow: 0 1px #fff, inset 0 1px 4px rgba(0,0,0,.15);
 }
 .checkout_input_region

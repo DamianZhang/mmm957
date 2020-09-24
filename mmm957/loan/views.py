@@ -10,6 +10,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout as django_logout
 from twilio.rest import Client
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import string
 import random
 import re
@@ -321,6 +322,7 @@ class AdSuccessView(View):
 class BorrowingMessageView(generic.ListView):
     template_name = 'loan/borrower_request.html'
     context_object_name = 'borrowing_message_list'
+    paginate_by = 20
 
     def get_queryset(self):
         return Borrowing_Message.objects.filter(borrower__user__user__groups__name='borrower').order_by('-pub_time')
@@ -328,12 +330,13 @@ class BorrowingMessageView(generic.ListView):
 class BorrowingMessageRegionView(generic.ListView):
     template_name = 'loan/borrower_request.html'
     context_object_name = 'borrowing_message_list'
+    paginate_by = 20
 
-    #這裡要改，要把小區域一起傳回
+    # 這裡要改，要把小區域一起傳回
     def get_queryset(self):
         query = []
         if self.kwargs.get('region') == '北、北、基（含宜蘭）':
-            query = ['台北', '新北', '基隆', '宜蘭']
+            query = ['台北', '新北', '基隆']
         elif self.kwargs.get('region') == '桃、竹、苗':
             query = ['桃園', '新竹', '苗栗']
         elif self.kwargs.get('region') == '中、彰、投':
@@ -342,8 +345,8 @@ class BorrowingMessageRegionView(generic.ListView):
             query = ['雲林', '嘉義', '台南']
         elif self.kwargs.get('region') == '高雄、屏東':
             query = ['高雄', '屏東']
-        elif self.kwargs.get('region') == '中、彰、投':
-            query = ['花蓮', '台東']
+        elif self.kwargs.get('region') == '花蓮、台東':
+            query = ['花蓮', '台東', '宜蘭']
         return Borrowing_Message.objects.filter(borrower__user__user__groups__name='borrower').filter(region__in=query).order_by('-pub_time')
 
 class BorrowingMessageDetailView(generic.DetailView):
@@ -402,6 +405,7 @@ class AdRegionView(generic.ListView):
 class LendingMessageView(generic.ListView):
     template_name = 'loan/lender_supply.html'
     context_object_name = 'lending_message_list'
+    paginate_by = 10
 
     def get_queryset(self):
         return Lender.objects.filter(user__user__groups__name='lender').order_by('-update_time')
@@ -409,6 +413,7 @@ class LendingMessageView(generic.ListView):
 class LendingMessageRegionView(generic.ListView):
     template_name = 'loan/lender_supply.html'
     context_object_name = 'lending_message_list'
+    paginate_by = 10
 
     def get_queryset(self):
         return Lender.objects.filter(user__user__groups__name='lender').filter(region=self.kwargs.get('region')).order_by('-update_time')

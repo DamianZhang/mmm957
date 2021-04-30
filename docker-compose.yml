@@ -24,9 +24,6 @@ services:
    image: mysql:5.7
    environment:
       - MYSQL_ROOT_PASSWORD=ntustdvbntust # 数据库密码
-      - MYSQL_USER=root # 数据库用户名
-      - MYSQL_PASSWORD=ntustdvbntust # 用户密码
-
    volumes:
       - myproject_db_vol:/var/lib/mysql:rw # 挂载数据库数据, 可读可写
       - ./compose/mysql/conf/my.cnf:/etc/mysql/my.cnf # 挂载配置文件

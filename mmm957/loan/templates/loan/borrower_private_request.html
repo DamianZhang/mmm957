@@ -172,7 +172,7 @@
 								<span class="span_color_title" id="B_tel">借款成功</span>
 							{% else %}
 								{% if user.is_authenticated %}
-									{% if perms.loan.view_borrowing_message %}
+									{% if perms.loan.view_borrowing_message or user.username == borrowing_message.borrower.user.user.username %}
 										<span class="span_color_title" id="B_tel"><a href="tel:{{borrowing_message.borrower.user.user.username}}">{{borrowing_message.borrower.user.user.username}}</a></span>
 									{% else %}
 										<span class="span_color_title" id="B_tel"><a href="/loan/register_lender/">權限不足 無法查看</a></span>
@@ -188,7 +188,7 @@
 								<span class="span_color_title" id="B_line">借款成功</span>
 							{% else %}
 								{% if user.is_authenticated %}
-									{% if perms.loan.view_borrowing_message %}
+									{% if perms.loan.view_borrowing_message or user.myuser.borrower.line_id == borrowing_message.borrower.line_id %}
 										<span class="span_color_title" id="B_line"><a href="https://line.naver.jp/ti/p/~{{borrowing_message.borrower.line_id}}">{{borrowing_message.borrower.line_id}}</a></span>
 									{% else %}
 										<span class="span_color_title" id="B_line"><a href="/loan/register_lender/">權限不足 無法查看</a></span>

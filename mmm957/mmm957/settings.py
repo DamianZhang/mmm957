@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mmm957_data',
         'USER': 'root',
-        'PASSWORD': 'ntustdvbntust',
+        'PASSWORD': 'db_password',
         'HOST': 'db',
         'PORT': '3306',
         'TEST': {
@@ -146,7 +146,7 @@ CACHES = {
         "LOCATION": "redis://redis:6379/1", #这里直接使用redis别名作为host ip地址
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
-            "PASSWORD": "ntustdvbntust", # 换成你自己密码
+            "PASSWORD": "redis_password", # 换成你自己密码
         },
     }
 }

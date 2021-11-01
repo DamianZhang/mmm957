@@ -5,8 +5,6 @@ from django.contrib.auth.models import User
 from .models import MyUser, Borrower, Borrowing_Message, Price, Employee, Lender, Paying, Ad_Contact, Ad
 
 
-# user:mmm957, password:ntustntust
-
 class MyUserInline(admin.StackedInline):
     model = MyUser
     can_delete = False
